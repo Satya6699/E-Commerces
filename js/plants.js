@@ -344,7 +344,7 @@ function addToCart(plantName) {
             cat: plant.cat,
             image: plant.image,
             size: '',
-            quantity: 1,
+            quantity: 1000,
             unit_price_cents: (plant.price * 100) || 0
         });
     }

@@ -283,7 +283,7 @@
                         const res = await fetch(API_BASE + '/api/checkout/create-session', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ items: [{ name: currentPlant.name, quantity: 1, unit_price_cents } ] })
+                            body: JSON.stringify({ items: [{ name: currentPlant.name, quantity: qty, unit_price_cents } ] })
                         });
                         const data = await res.json();
                         if (data && data.url) {

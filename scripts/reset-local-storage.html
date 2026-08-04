@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reset Plant Stocks</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial;padding:24px;background:#f7fff7}button{padding:12px 16px;margin:8px;border-radius:8px;border:1px solid #ccc;background:#fff;cursor:pointer}pre{background:#fff;padding:12px;border-radius:8px;border:1px solid #eee}</style>
+</head>
+<body>
+  <h2>Reset Local Plant Stocks to 1000</h2>
+  <p>This small utility updates the <code>plants</code> entry in browser <strong>localStorage</strong> so every plant's <code>stock</code> becomes <strong>1000</strong>.</p>
+
+  <button id="doReset">Set stocks to 1000</button>
+  <button id="doClear">Remove local plants (reload from server)</button>
+
+  <h4>Direct browser console snippet</h4>
+  <pre>let plants=JSON.parse(localStorage.getItem('plants')||'[]'); if(!plants||!plants.length) console.warn('no plants in localStorage — open site first'); plants.forEach(p=>{ if(p&&typeof p==='object') p.stock=1000 }); localStorage.setItem('plants', JSON.stringify(plants)); location.reload();</pre>
+
+  <p>Usage: open this file in the same origin as your site (or open your site, then open the devtools console and paste the snippet above).</p>
+
+  <script>
+    document.getElementById('doReset').addEventListener('click', ()=>{
+      try{
+        const raw = localStorage.getItem('plants') || '[]';
+        const plants = JSON.parse(raw);
+        if (!Array.isArray(plants) || plants.length === 0) {
+          alert('No plants found in localStorage. Open the site first so it populates localStorage, then run this.');
+          return;
+        }
+        plants.forEach(p=>{ if(p && typeof p === 'object') p.stock = 1000; });
+        localStorage.setItem('plants', JSON.stringify(plants));
+        alert('Updated ' + plants.length + ' plants to stock = 1000. Reload the site to see changes.');
+      }catch(e){ alert('Error: '+e.message); }
+    });
+
+    document.getElementById('doClear').addEventListener('click', ()=>{
+      if(confirm('Remove local stored plants? The site will reload and fetch from server sources if available.')){
+        localStorage.removeItem('plants');
+        alert('Removed local plants. Reloading...');
+        location.reload();
+      }
+    });
+  </script>
+</body>
+</html>
