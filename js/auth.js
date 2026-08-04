@@ -326,6 +326,30 @@ function isCustomerLoggedIn() {
     return getCurrentCustomer() !== null;
 }
 
+function updateProfileButton() {
+    const customer = getCurrentCustomer();
+    const loginButton = document.getElementById('login-button');
+    const profileButton = document.getElementById('profile-button');
+    const mobileLoginButton = document.getElementById('mobile-login-button');
+    const mobileProfileButton = document.getElementById('mobile-profile-button');
+
+    if (customer) {
+        if (loginButton) loginButton.classList.add('hidden');
+        if (profileButton) {
+            profileButton.classList.remove('hidden');
+            const label = document.getElementById('profile-label');
+            if (label) label.textContent = customer.name ? customer.name.split(' ')[0] : 'Profile';
+        }
+        if (mobileLoginButton) mobileLoginButton.classList.add('hidden');
+        if (mobileProfileButton) mobileProfileButton.classList.remove('hidden');
+    } else {
+        if (loginButton) loginButton.classList.remove('hidden');
+        if (profileButton) profileButton.classList.add('hidden');
+        if (mobileLoginButton) mobileLoginButton.classList.remove('hidden');
+        if (mobileProfileButton) mobileProfileButton.classList.add('hidden');
+    }
+}
+
 // Get customer's orders
 function getCustomerOrders(customerId) {
     const allOrders = getAllOrders();

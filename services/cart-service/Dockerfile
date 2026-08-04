@@ -6,9 +6,9 @@ COPY services/cart-service/package*.json ./
 
 RUN npm ci --only=production
 
-COPY services/cart-service/ ./
-COPY shared/ ../shared/
+COPY services/cart-service/ /app/services/cart-service/
+COPY shared/ /app/shared/
 
 EXPOSE 3004
 
-CMD ["npm", "start"]
+CMD ["node", "services/cart-service/server.js"]

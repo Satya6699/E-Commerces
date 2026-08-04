@@ -77,7 +77,6 @@ app.use('/api/admin', createProxyMiddleware({
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../index.html'));
 });
-
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });

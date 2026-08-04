@@ -136,6 +136,7 @@ async function loadPlantsDatabase() {
                     window.getPlantByName = getPlantByName;
                     window.IMG_PLACEHOLDER = IMG_PLACEHOLDER;
                     plantsLoaded = true;
+                    window.dispatchEvent(new Event('plantsLoaded'));
                     const plantGrid = document.getElementById('plant-grid');
                     if (plantGrid) {
                         filterPlants('all');
@@ -184,6 +185,7 @@ async function loadPlantsDatabase() {
         
         console.log(`Loaded ${plants.length} plants from database`);
         plantsLoaded = true;
+        window.dispatchEvent(new Event('plantsLoaded'));
         
         // Only filter if we're on index.html (check if plant-grid exists)
         const plantGrid = document.getElementById('plant-grid');
@@ -193,6 +195,11 @@ async function loadPlantsDatabase() {
     } catch (error) {
         console.error('Error loading plants database:', error);
         plantsLoaded = true;
+        window.dispatchEvent(new Event('plantsLoaded'));
+        const plantGrid = document.getElementById('plant-grid');
+        if (plantGrid) {
+            filterPlants('all');
+        }
         // Don't alert, just log the error
         console.error('Failed to load plants database:', error.message);
     }

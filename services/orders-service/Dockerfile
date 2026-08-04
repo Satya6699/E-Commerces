@@ -6,9 +6,9 @@ COPY services/orders-service/package*.json ./
 
 RUN npm ci --only=production
 
-COPY services/orders-service/ ./
-COPY shared/ ../shared/
+COPY services/orders-service/ /app/services/orders-service/
+COPY shared/ /app/shared/
 
 EXPOSE 3003
 
-CMD ["npm", "start"]
+CMD ["node", "services/orders-service/server.js"]
