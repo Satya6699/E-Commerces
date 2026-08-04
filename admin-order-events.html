@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Order Events</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css.css">
+  <script>
+    window.hasBackend = true;
+    window.API_BASE = window.API_BASE || 'http://localhost:3000';
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <nav class="bg-white shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="admin.html" class="text-green-700 font-bold">Admin</a>
+      <div>
+        <button id="btn-refresh" class="px-3 py-1 bg-green-600 text-white rounded">Refresh</button>
+        <button id="btn-logout" class="ml-2 px-3 py-1 bg-red-500 text-white rounded">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Order Events</h1>
+    <p class="text-sm text-gray-600 mb-6">Shows audit events for order lifecycle (cancels, status updates).</p>
+
+    <div id="events-area" class="space-y-4">
+      <div class="text-center py-12">
+        <i class="fas fa-spinner fa-spin text-green-600 text-4xl mb-4 block"></i>
+        <p class="text-gray-600">Loading events...</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function fetchEvents() {
+      const token = localStorage.getItem('authToken');
+      if (!token) {
+        document.getElementById('events-area').innerHTML = '<div class="text-red-600">Not authenticated. Please login via admin page.</div>';
+        return;
+      }
+
+      try {
+        const res = await fetch((window.API_BASE || '') + '/api/admin/order-events?limit=200', {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+        if (!res.ok) {
+          const j = await res.json().catch(()=>({}));
+          document.getElementById('events-area').innerHTML = '<div class="text-red-600">Error fetching events: ' + (j.error||res.status) + '</div>';
+          return;
+        }
+        const data = await res.json();
+        renderEvents(data.events || []);
+      } catch (e) {
+        document.getElementById('events-area').innerHTML = '<div class="text-red-600">Fetch failed: '+e.message+'</div>';
+      }
+    }
+
+    function renderEvents(events) {
+      if (!events || events.length === 0) {
+        document.getElementById('events-area').innerHTML = '<div class="text-gray-600">No order events found.</div>';
+        return;
+      }
+      const html = events.map(ev => `
+        <div class="bg-white p-4 rounded shadow-sm">
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="text-sm text-gray-500">${new Date(ev.timestamp).toLocaleString()}</div>
+              <div class="font-bold">${ev.action}</div>
+              <div class="text-xs text-gray-600">Order: ${ev.order_id} • User: ${ev.user_id || '–'}</div>
+            </div>
+            <div class="text-xs text-gray-500">${JSON.stringify(ev.details || {})}</div>
+          </div>
+        </div>
+      `).join('');
+      document.getElementById('events-area').innerHTML = html;
+    }
+
+    document.getElementById('btn-refresh').addEventListener('click', fetchEvents);
+    document.getElementById('btn-logout').addEventListener('click', ()=>{ localStorage.removeItem('authToken'); window.location.href='admin.html'; });
+
+    // Load on start
+    fetchEvents();
+  </script>
+</body>
+</html>

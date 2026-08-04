@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Orders - Sri Lavanya Nursery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #15803d, #86efac);
+        }
+
+        .timeline-item {
+            margin-left: 60px;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            border: 3px solid white;
+        }
+
+        .timeline-item.active::before {
+            background: #15803d;
+            box-shadow: 0 0 10px rgba(21, 128, 61, 0.5);
+        }
+
+        .timeline-item.completed::before {
+            background: #10b981;
+        }
+
+        .status-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 0;
+        }
+
+        .status-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .status-step.active .step-circle {
+            background: #15803d;
+            color: white;
+            box-shadow: 0 0 15px rgba(21, 128, 61, 0.4);
+        }
+
+        .status-step.completed .step-circle {
+            background: #10b981;
+            color: white;
+        }
+
+        .status-step.pending .step-circle {
+            background: #e5e7eb;
+            color: #9ca3af;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .step-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+        }
+
+        .card-glow {
+            transition: all 0.3s ease;
+        }
+
+        .card-glow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(21, 128, 61, 0.15);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-700 tracking-tight flex items-center gap-2">
+                <i class="fas fa-leaf"></i> Sri Lavanya Nursery
+            </a>
+            <div class="flex items-center gap-4">
+                <span id="customer-name" class="text-green-700 font-bold"></span>
+                <button onclick="handleLogout()"
+                    class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 font-medium flex items-center gap-2">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Header -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-green-800 mb-3">
+                <i class="fas fa-box-open text-green-600 mr-3"></i> Track Your Orders
+            </h1>
+            <p class="text-gray-600 text-lg">Stay updated on your plant deliveries in real-time</p>
+        </div>
+
+        <!-- Orders Grid -->
+        <div id="orders-container" class="space-y-8">
+            <div class="text-center py-12">
+                <i class="fas fa-spinner fa-spin text-green-600 text-4xl mb-4 block"></i>
+                <p class="text-gray-600">Loading your orders...</p>
+            </div>
+        </div>
+
+        <!-- No Orders Message -->
+        <div id="no-orders" class="hidden text-center py-16">
+            <i class="fas fa-inbox text-gray-300 text-6xl mb-4 block"></i>
+            <h3 class="text-2xl font-bold text-gray-600 mb-2">No Orders Yet</h3>
+            <p class="text-gray-500 mb-8">Start your plant journey with us today!</p>
+            <a href="index.html"
+                class="inline-block bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-3 rounded-lg font-bold hover:shadow-lg transition">
+                <i class="fas fa-shopping-cart mr-2"></i> Browse Plants
+            </a>
+        </div>
+    </main>
+
+    <!-- Order Detail Modal -->
+    <div id="order-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-96 overflow-y-auto">
+            <div
+                class="sticky top-0 bg-gradient-to-r from-green-600 to-teal-600 text-white px-8 py-6 flex justify-between items-start">
+                <div>
+                    <h2 id="modal-order-id" class="text-2xl font-bold"></h2>
+                    <p id="modal-order-date" class="text-green-100 text-sm mt-1"></p>
+                </div>
+                <button onclick="closeOrderModal()" class="text-2xl hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="p-8 space-y-6">
+                <!-- Status Progress -->
+                <div id="modal-status-progress" class="status-progress"></div>
+
+                <!-- Order Summary -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-green-800 mb-4">Order Summary</h3>
+                    <div id="modal-items" class="space-y-3 mb-4"></div>
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-700">Total Amount:</span>
+                            <span id="modal-total" class="text-xl font-bold text-green-600"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Status -->
+                <div class="border-l-4 border-green-600 bg-green-50 p-4 rounded">
+                    <p class="text-sm text-gray-600 mb-1">Current Status</p>
+                    <p id="modal-status" class="text-xl font-bold text-green-800"></p>
+                </div>
+
+                <!-- Timeline -->
+                <div id="modal-timeline" class="timeline"></div>
+
+                <!-- Delivery Info -->
+                <div id="modal-delivery-info" class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-600 hidden">
+                    <p class="text-sm text-gray-600 mb-2">
+                        <i class="fas fa-truck text-blue-600 mr-2"></i> Estimated Delivery
+                    </p>
+                    <p id="modal-delivery-date" class="text-lg font-bold text-blue-800"></p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-gray-600 mb-1">Phone</p>
+                        <p id="modal-phone" class="font-bold text-gray-800"></p>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p class="text-gray-600 mb-1">Email</p>
+                        <p id="modal-email" class="font-bold text-gray-800 text-xs"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-green-900 text-white py-8 text-center mt-16">
+        <p class="text-green-200 mb-2">🌱 Sri Lavanya Nursery</p>
+        <p class="text-green-300 text-sm">&copy; 2026 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        window.hasBackend = true;
+        window.API_BASE = window.API_BASE || (window.location.origin && window.location.origin !== 'null' ? window.location.origin : 'http://localhost:3000');
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/orders.js"></script>
+    <script>
+        let currentCustomer = null;
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            checkCustomerLogin();
+            loadCustomerOrders();
+        });
+
+        // Check if customer is logged in
+        function checkCustomerLogin() {
+            currentCustomer = getCurrentCustomer();
+            if (!currentCustomer) {
+                window.location.href = 'login.html';
+                return;
+            }
+            document.getElementById('customer-name').textContent = `👋 ${currentCustomer.name}`;
+        }
+
+        // Load customer's orders
+        function loadCustomerOrders() {
+            const orders = getCustomerOrders(currentCustomer.id);
+            const container = document.getElementById('orders-container');
+            const noOrders = document.getElementById('no-orders');
+
+            if (orders.length === 0) {
+                container.innerHTML = '';
+                noOrders.classList.remove('hidden');
+                return;
+            }
+
+            noOrders.classList.add('hidden');
+            container.innerHTML = orders.map(order => createOrderCard(order)).join('');
+        }
+
+        // Create order card
+        function createOrderCard(order) {
+            const statusSteps = ['pending', 'confirmed', 'shipped', 'delivered'];
+            const statusColors = {
+                pending: { icon: 'hourglass-start', color: 'text-yellow-600' },
+                confirmed: { icon: 'check-circle', color: 'text-blue-600' },
+                shipped: { icon: 'truck', color: 'text-purple-600' },
+                delivered: { icon: 'box-open', color: 'text-green-600' }
+            };
+
+            const currentStatusIndex = statusSteps.indexOf(order.status);
+            const progressPercent = ((currentStatusIndex + 1) / statusSteps.length) * 100;
+
+            let statusBadgeClass = 'status-pending';
+            let statusIcon = 'hourglass-start';
+            let statusColor = 'text-yellow-600';
+
+            if (order.status === 'confirmed') {
+                statusBadgeClass = 'status-confirmed';
+                statusIcon = 'check-circle';
+                statusColor = 'text-blue-600';
+            } else if (order.status === 'shipped') {
+                statusBadgeClass = 'status-shipped';
+                statusIcon = 'truck';
+                statusColor = 'text-purple-600';
+            } else if (order.status === 'delivered') {
+                statusBadgeClass = 'status-delivered';
+                statusIcon = 'box-open';
+                statusColor = 'text-green-600';
+            }
+
+            return `
+                <div class="bg-white rounded-2xl shadow-lg p-6 card-glow border-t-4 border-green-600">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-800">${order.id}</h3>
+                            <p class="text-gray-600 text-sm">
+                                <i class="fas fa-calendar-alt text-green-600 mr-2"></i>
+                                ${new Date(order.created_at).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="viewOrderDetails('${order.id}')" class="bg-green-100 text-green-700 px-4 py-2 rounded-lg font-bold hover:bg-green-200 transition">
+                                <i class="fas fa-eye mr-2"></i> Details
+                            </button>
+                            ${order.status === 'pending' || order.status === 'confirmed' ? `
+                                <button onclick="confirmCancelOrder('${order.id}')" class="bg-red-100 text-red-700 px-4 py-2 rounded-lg font-bold hover:bg-red-200 transition">
+                                    <i class="fas fa-times mr-2"></i> Cancel
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 text-xs font-bold">
+                            <span class="text-gray-600">Progress</span>
+                            <span class="text-green-600">${progressPercent.toFixed(0)}%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div class="bg-gradient-to-r from-green-500 to-teal-500 h-full transition-all duration-500" style="width: ${progressPercent}%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Status Badge -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-${statusIcon} ${statusColor} text-xl"></i>
+                            <span class="font-bold text-gray-800 capitalize">${order.status}</span>
+                        </div>
+                        ${order.status === 'shipped' ? '<div class="text-green-600 text-sm font-bold pulse"><i class="fas fa-map-marker-alt mr-1"></i> In Transit</div>' : ''}
+                    </div>
+
+                    <!-- Items Preview -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <p class="text-xs text-gray-600 font-bold mb-3">ITEMS (${order.items.length})</p>
+                        <div class="space-y-2">
+                            ${order.items.slice(0, 2).map(item => `
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-800 font-medium">${item.name}</span>
+                                    <span class="text-gray-600">x${item.quantity}</span>
+                                </div>
+                            `).join('')}
+                            ${order.items.length > 2 ? `<p class="text-xs text-gray-500 mt-2">+${order.items.length - 2} more item(s)</p>` : ''}
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                        <span class="text-gray-700 font-bold">Total Amount:</span>
+                        <span class="text-2xl font-bold text-green-600">₹${(order.total_amount / 100).toFixed(2)}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // View order details
+        function viewOrderDetails(orderId) {
+            const order = getOrderById(orderId);
+            if (!order) return;
+
+            // Set order ID and date
+            document.getElementById('modal-order-id').textContent = order.id;
+            document.getElementById('modal-order-date').textContent = `Ordered on ${new Date(order.created_at).toLocaleDateString('en-IN')}`;
+
+            // Status progress
+            const statusSteps = ['pending', 'confirmed', 'shipped', 'delivered'];
+            const currentStatusIndex = statusSteps.indexOf(order.status);
+            const progressHtml = statusSteps.map((status, idx) => `
+                <div class="status-step ${idx <= currentStatusIndex ? (idx === currentStatusIndex ? 'active' : 'completed') : 'pending'}">
+                    <div class="step-circle">
+                        ${idx < currentStatusIndex ? '<i class="fas fa-check"></i>' :
+                    idx === currentStatusIndex ? '<i class="fas fa-circle pulse"></i>' :
+                        '<i class="fas fa-circle"></i>'}
+                    </div>
+                    <p class="step-label">${status.charAt(0).toUpperCase() + status.slice(1)}</p>
+                </div>
+            `).join('');
+            document.getElementById('modal-status-progress').innerHTML = progressHtml;
+
+            // Items
+            const itemsHtml = order.items.map(item => `
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="font-bold text-gray-800">${item.name}</p>
+                        <p class="text-xs text-gray-600">${item.cat}${item.size ? ' - ' + item.size : ''}</p>
+                    </div>
+                    <p class="font-bold text-gray-700">x${item.quantity}</p>
+                </div>
+            `).join('');
+            document.getElementById('modal-items').innerHTML = itemsHtml;
+
+            // Total
+            document.getElementById('modal-total').textContent = `₹${(order.total_amount / 100).toFixed(2)}`;
+
+            // Status
+            document.getElementById('modal-status').textContent = order.status.toUpperCase();
+
+            // Timeline
+            const timelineHtml = statusSteps.map((status, idx) => `
+                <div class="timeline-item ${order.status === status ? 'active' : ''} ${statusSteps.indexOf(order.status) > idx ? 'completed' : ''}">
+                    <p class="font-bold text-gray-800 capitalize">${status}</p>
+                    <p class="text-xs text-gray-600">
+                        ${status === 'pending' ? 'Your order has been registered' :
+                    status === 'confirmed' ? 'Order confirmed and being prepared' :
+                        status === 'shipped' ? 'Package is on its way to you' :
+                            'Order delivered successfully'}
+                    </p>
+                </div>
+            `).join('');
+            document.getElementById('modal-timeline').innerHTML = timelineHtml;
+
+            // Delivery info
+            if (order.status === 'shipped' || order.status === 'delivered') {
+                const deliveryDate = new Date(order.updated_at);
+                deliveryDate.setDate(deliveryDate.getDate() + 2);
+                document.getElementById('modal-delivery-date').textContent = deliveryDate.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                document.getElementById('modal-delivery-info').classList.remove('hidden');
+            } else {
+                document.getElementById('modal-delivery-info').classList.add('hidden');
+            }
+
+            // Contact info
+            document.getElementById('modal-phone').textContent = currentCustomer.phone || 'Not provided';
+            document.getElementById('modal-email').textContent = currentCustomer.email;
+
+            // Show modal
+            document.getElementById('order-modal').classList.remove('hidden');
+        }
+
+        // Close order modal
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.add('hidden');
+        }
+
+        // Confirm and cancel an order (tries server then local fallback)
+        async function confirmCancelOrder(orderId) {
+            if (!confirm('Are you sure you want to cancel this order?')) return;
+            // show simple loading feedback
+            try {
+                const result = await cancelOrder(orderId);
+                if (result && result.success) {
+                    if (typeof showToast === 'function') showToast('Order cancelled successfully');
+                    else alert('Order cancelled successfully');
+                    loadCustomerOrders();
+                    // close modal if it is showing this order
+                    const modalId = document.getElementById('modal-order-id').textContent;
+                    if (modalId === orderId) closeOrderModal();
+                } else {
+                    const msg = (result && result.error) ? result.error : 'Unknown error';
+                    if (typeof showToast === 'function') showToast('Could not cancel order: ' + msg);
+                    else alert('Could not cancel order: ' + msg);
+                }
+            } catch (e) {
+                if (typeof showToast === 'function') showToast('Cancel failed: ' + e.message);
+                else alert('Cancel failed: ' + e.message);
+            }
+        }
+
+        // Logout
+        function handleLogout() {
+            logoutCustomer();
+            window.location.href = 'login.html';
+        }
+
+        // Auto-refresh orders every 30 seconds
+        setInterval(() => {
+            loadCustomerOrders();
+        }, 30000);
+    </script>
+</body>
+
+</html>

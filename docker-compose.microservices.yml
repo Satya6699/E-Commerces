@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: plants-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: plants
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - plants-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: .
+      dockerfile: services/api-gateway/Dockerfile
+    container_name: api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      AUTH_SERVICE_URL: http://auth-service:3001
+      PRODUCTS_SERVICE_URL: http://products-service:3002
+      ORDERS_SERVICE_URL: http://orders-service:3003
+      CART_SERVICE_URL: http://cart-service:3004
+      ADMIN_SERVICE_URL: http://admin-service:3005
+    depends_on:
+      - auth-service
+      - products-service
+      - orders-service
+      - cart-service
+      - admin-service
+    networks:
+      - plants-network
+
+  # Auth Service
+  auth-service:
+    build:
+      context: .
+      dockerfile: services/auth-service/Dockerfile
+    container_name: auth-service
+    ports:
+      - "3001:3001"
+    environment:
+      AUTH_SERVICE_PORT: 3001
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/plants?authSource=admin
+      JWT_SECRET: ${JWT_SECRET:-your-secret-key-change-in-production}
+      ADMIN_DEFAULT_EMAIL: ${ADMIN_DEFAULT_EMAIL:-admin@lavanya.com}
+      ADMIN_DEFAULT_PHONE: ${ADMIN_DEFAULT_PHONE:-919876543210}
+      ADMIN_DEFAULT_NAME: ${ADMIN_DEFAULT_NAME:-Admin}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - plants-network
+
+  # Products Service
+  products-service:
+    build:
+      context: .
+      dockerfile: services/products-service/Dockerfile
+    container_name: products-service
+    ports:
+      - "3002:3002"
+    environment:
+      PRODUCTS_SERVICE_PORT: 3002
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/plants?authSource=admin
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - plants-network
+
+  # Orders Service
+  orders-service:
+    build:
+      context: .
+      dockerfile: services/orders-service/Dockerfile
+    container_name: orders-service
+    ports:
+      - "3003:3003"
+    environment:
+      ORDERS_SERVICE_PORT: 3003
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/plants?authSource=admin
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - plants-network
+
+  # Cart Service
+  cart-service:
+    build:
+      context: .
+      dockerfile: services/cart-service/Dockerfile
+    container_name: cart-service
+    ports:
+      - "3004:3004"
+    environment:
+      CART_SERVICE_PORT: 3004
+    networks:
+      - plants-network
+
+  # Admin Service
+  admin-service:
+    build:
+      context: .
+      dockerfile: services/admin-service/Dockerfile
+    container_name: admin-service
+    ports:
+      - "3005:3005"
+    environment:
+      ADMIN_SERVICE_PORT: 3005
+    depends_on:
+      - auth-service
+      - orders-service
+      - products-service
+    networks:
+      - plants-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  plants-network:
+    driver: bridge

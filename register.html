@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sri Lavanya Nursery</title>
+    <script>
+        window.hasBackend = true;
+        window.API_BASE = window.API_BASE || (window.location.origin && window.location.origin !== 'null' ? window.location.origin : 'http://localhost:3000');
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating particles */
+        .floating-particle {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .particle-leaf {
+            animation: float 6s ease-in-out infinite, sway 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(20px); }
+        }
+
+        /* Card animations */
+        .register-card {
+            animation: slideInUp 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Form input animations */
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        .form-input:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
+        }
+
+        /* Button animations */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        /* Error message animation */
+        .error-message {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Success animation */
+        .success-animation {
+            animation: popIn 0.5s ease-out;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 4px solid rgba(34, 197, 94, 0.1);
+            border-top: 4px solid #22c55e;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Feature cards */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #22c55e, #14b8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Icon animations */
+        .icon-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Password strength indicator */
+        .strength-bar {
+            height: 4px;
+            border-radius: 2px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .strength-weak { background-color: #ef4444; width: 33%; }
+        .strength-fair { background-color: #f59e0b; width: 66%; }
+        .strength-strong { background-color: #22c55e; width: 100%; }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Particles -->
+    <div class="floating-particle particle-leaf" style="top: 10%; left: 5%; font-size: 3rem;">🌿</div>
+    <div class="floating-particle particle-leaf" style="top: 20%; right: 8%; font-size: 2.5rem; animation-delay: 1s;">🌱</div>
+    <div class="floating-particle particle-leaf" style="top: 50%; left: 10%; font-size: 2rem; animation-delay: 2s;">🍃</div>
+    <div class="floating-particle particle-leaf" style="bottom: 20%; right: 5%; font-size: 2.5rem; animation-delay: 0.5s;">🌿</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white bg-opacity-90 backdrop-filter backdrop-blur shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold gradient-text tracking-tight flex items-center gap-2 hover:scale-105 transition">
+                <i class="fas fa-leaf"></i> Sri Lavanya Nursery
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="font-medium text-gray-700 hover:text-green-600 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Shop
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- LEFT SIDE - BRANDING & FEATURES -->
+            <div class="hidden lg:block text-center text-white">
+                <div class="mb-8 icon-bounce">
+                    <i class="fas fa-leaf text-white text-8xl mb-4 block drop-shadow-lg"></i>
+                </div>
+                <h2 class="text-5xl font-black mb-4 drop-shadow-lg">Join Our Garden!</h2>
+                <p class="text-xl text-white text-opacity-90 mb-12 drop-shadow">Create your account and become part of our thriving plant community today!</p>
+                
+                <!-- Feature Cards -->
+                <div class="space-y-6 max-w-md mx-auto">
+                    <div class="feature-card bg-white bg-opacity-10 backdrop-filter backdrop-blur rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-400 bg-opacity-30 p-3 rounded-full text-white text-2xl">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white mb-1 text-lg">✨ Create Account</h4>
+                                <p class="text-white text-opacity-80">Quick and secure registration</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white bg-opacity-10 backdrop-filter backdrop-blur rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-400 bg-opacity-30 p-3 rounded-full text-white text-2xl">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white mb-1 text-lg">🎁 Exclusive Offers</h4>
+                                <p class="text-white text-opacity-80">Special discounts for members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card bg-white bg-opacity-10 backdrop-filter backdrop-blur rounded-xl p-6 border border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-yellow-400 bg-opacity-30 p-3 rounded-full text-white text-2xl">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white mb-1 text-lg">💬 24/7 Support</h4>
+                                <p class="text-white text-opacity-80">We're always here to help</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-white text-opacity-80 text-sm">
+                    <p>🌍 Fast Delivery | 🔒 Secure Payment | 💚 Trusted Since 2024</p>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE - REGISTER FORM -->
+            <div class="max-w-md mx-auto w-full">
+                <div class="register-card rounded-2xl shadow-2xl p-8 border border-green-200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-black gradient-text mb-2">Create Account 🌿</h3>
+                        <p class="text-gray-600">Join Sri Lavanya Nursery today</p>
+                    </div>
+                    
+                    <form onsubmit="handleRegister(event)" class="space-y-4">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">
+                                <i class="fas fa-user text-green-600 mr-2"></i> Full Name
+                            </label>
+                            <input 
+                                type="text" 
+                                id="register-name"
+                                placeholder="John Doe"
+                                required
+                                class="w-full px-4 py-3 rounded-lg form-input"
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">
+                                <i class="fas fa-envelope text-green-600 mr-2"></i> Email Address
+                            </label>
+                            <input 
+                                type="email" 
+                                id="register-email"
+                                placeholder="your@email.com"
+                                required
+                                class="w-full px-4 py-3 rounded-lg form-input"
+                            >
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">
+                                <i class="fas fa-phone text-green-600 mr-2"></i> Phone Number
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="register-phone"
+                                placeholder="+91 98765 43210"
+                                required
+                                class="w-full px-4 py-3 rounded-lg form-input"
+                            >
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">
+                                <i class="fas fa-lock text-green-600 mr-2"></i> Password
+                            </label>
+                            <input 
+                                type="password" 
+                                id="register-password"
+                                placeholder="••••••••"
+                                required
+                                oninput="checkPasswordStrength()"
+                                class="w-full px-4 py-3 rounded-lg form-input"
+                            >
+                            <div id="strength-container" class="mt-2">
+                                <div class="strength-bar strength-weak" id="strength-bar"></div>
+                                <p class="text-xs text-gray-600 mt-1" id="strength-text">Password strength</p>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">
+                                <i class="fas fa-check-circle text-green-600 mr-2"></i> Confirm Password
+                            </label>
+                            <input 
+                                type="password" 
+                                id="register-confirm-password"
+                                placeholder="••••••••"
+                                required
+                                class="w-full px-4 py-3 rounded-lg form-input"
+                            >
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="flex items-start gap-3 pt-2">
+                            <input 
+                                type="checkbox" 
+                                id="register-terms"
+                                required
+                                class="mt-1 w-4 h-4 text-green-600 rounded form-checkbox"
+                            >
+                            <label for="register-terms" class="text-sm text-gray-700">
+                                I agree to the <a href="#" class="text-green-600 hover:underline font-bold">Terms & Conditions</a> and <a href="#" class="text-green-600 hover:underline font-bold">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div id="register-error" class="hidden bg-red-100 border-l-4 border-red-600 p-4 rounded-lg text-red-700 text-sm error-message">
+                            <i class="fas fa-exclamation-circle mr-2"></i><span id="register-error-text"></span>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div id="register-success" class="hidden bg-green-100 border-l-4 border-green-600 p-4 rounded-lg text-green-700 text-sm success-animation">
+                            <i class="fas fa-check-circle mr-2"></i><span id="register-success-text">Registration successful! Redirecting...</span>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button 
+                            type="submit"
+                            id="register-btn"
+                            class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-lg font-bold hover:shadow-lg transition btn-primary relative"
+                        >
+                            <i class="fas fa-user-plus mr-2"></i> Create Account
+                        </button>
+                    </form>
+                    
+                    <!-- Divider -->
+                    <div class="my-6 flex items-center gap-4">
+                        <div class="flex-1 border-t-2 border-gray-300"></div>
+                        <span class="text-gray-500 font-bold">OR</span>
+                        <div class="flex-1 border-t-2 border-gray-300"></div>
+                    </div>
+                    
+                    <!-- Already have account -->
+                    <p class="text-center text-gray-700 font-medium">
+                        Already have an account? 
+                        <a href="login.html" class="text-green-600 hover:text-green-700 font-bold hover:underline transition">
+                            Login here
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Mobile Features (hidden on desktop) -->
+                <div class="lg:hidden mt-8 space-y-4 text-white text-center">
+                    <p class="text-xl font-bold drop-shadow">Why Join Us?</p>
+                    <div class="flex justify-around gap-4">
+                        <div class="text-2xl">✨</div>
+                        <div class="text-2xl">🎁</div>
+                        <div class="text-2xl">💬</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Password strength checker
+        function checkPasswordStrength() {
+            const password = document.getElementById('register-password').value;
+            const strengthBar = document.getElementById('strength-bar');
+            const strengthText = document.getElementById('strength-text');
+
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+
+            strengthBar.className = 'strength-bar';
+            if (strength === 1) {
+                strengthBar.classList.add('strength-weak');
+                strengthText.textContent = 'Weak password';
+            } else if (strength === 2 || strength === 3) {
+                strengthBar.classList.add('strength-fair');
+                strengthText.textContent = 'Fair password';
+            } else if (strength === 4) {
+                strengthBar.classList.add('strength-strong');
+                strengthText.textContent = 'Strong password';
+            }
+        }
+
+        // Handle registration
+        function getLocalCustomers() {
+            const customersJson = localStorage.getItem('nurseryCustomers');
+            return customersJson ? JSON.parse(customersJson) : [];
+        }
+
+        function saveLocalCustomers(customers) {
+            localStorage.setItem('nurseryCustomers', JSON.stringify(customers));
+        }
+
+        function registerLocalAccount(name, email, phone, password) {
+            const customers = getLocalCustomers();
+
+            if (customers.find(c => c.email === email)) {
+                return { success: false, message: 'Email already registered' };
+            }
+            if (customers.find(c => c.phone === phone)) {
+                return { success: false, message: 'Phone number already registered' };
+            }
+
+            const customer = {
+                id: 'CUST-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
+                name,
+                email,
+                phone,
+                password: btoa(password),
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            };
+
+            customers.push(customer);
+            saveLocalCustomers(customers);
+            localStorage.setItem('currentCustomer', JSON.stringify(customer));
+
+            return { success: true, message: 'Registration successful! (saved locally)' };
+        }
+
+        async function handleRegister(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('register-name').value.trim();
+            const email = document.getElementById('register-email').value.trim();
+            const phone = document.getElementById('register-phone').value.trim();
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            const errorDiv = document.getElementById('register-error');
+            const successDiv = document.getElementById('register-success');
+            const btn = document.getElementById('register-btn');
+
+            // Reset messages
+            errorDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+
+            // Validation
+            if (!name || !email || !phone || !password || !confirmPassword) {
+                showError('Please fill in all fields');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+
+            if (password.length < 8) {
+                showError('Password must be at least 8 characters long');
+                return;
+            }
+
+            // Show loading state
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner inline-block mr-2"></span> Creating Account...';
+
+            const useBackend = window.hasBackend === true && API_BASE && API_BASE !== 'null';
+
+            try {
+                if (useBackend) {
+                    const response = await fetch(API_BASE + '/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name,
+                            email,
+                            phone,
+                            password
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        showError(data.message || 'Registration failed. Please try again.');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-user-plus mr-2"></i> Create Account';
+                        return;
+                    }
+                } else {
+                    const localResult = registerLocalAccount(name, email, phone, password);
+                    if (!localResult.success) {
+                        showError(localResult.message);
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-user-plus mr-2"></i> Create Account';
+                        return;
+                    }
+                }
+
+                // Show success and redirect
+                successDiv.classList.remove('hidden');
+                document.getElementById('register-success-text').textContent = 'Registration successful! Redirecting to login...';
+                
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+
+            } catch (err) {
+                console.error('Registration error:', err);
+
+                const localResult = registerLocalAccount(name, email, phone, password);
+                if (localResult.success) {
+                    successDiv.classList.remove('hidden');
+                    document.getElementById('register-success-text').textContent = 'Registration successful locally! Redirecting to login...';
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                    return;
+                }
+
+                showError('Network error. ' + localResult.message);
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-user-plus mr-2"></i> Create Account';
+            }
+
+            function showError(message) {
+                document.getElementById('register-error-text').textContent = message;
+                errorDiv.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

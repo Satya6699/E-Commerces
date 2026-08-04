@@ -1,0 +1,1414 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "name": "Snake Plant",
+      "category": "Indoor Plants",
+      "short_description": "Hardy air-purifying plant with striking striped leaves, perfect for beginners.",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQdwyXELSrKk6VZRITyTpgB3V20hyUIgexgThGXx-NK8thCsgaRBX8z9fc5XMQu8_BzqKEyEnHf5sW6rr4pTpk9znpOO4ltQjxqlde3xIBzwrjS-fQNrNyfF2Y",
+      "images": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS5ar58KCXExp5t41kMAAj2tdvYzgfIVU16CmuDZpi92ILBKOpZXEhBa18mb2Y3iofAVAWa1S76lG5R3DTJSNzdyb3GXPZkiA",
+        "https://www.leafenvy.co.uk/cdn/shop/articles/top-5-benefits-of-having-a-snake-plant-in-your-home-946072.jpg?v=1693062724",
+        "https://www.succulentfactory.in/cdn/shop/files/aAI002-H46.jpg?v=1758772035",
+        "https://plantsguru.com/cdn/shop/files/Sansevieria_Golden_Long_-_Snake_Plant.jpg?v=1746087730&width=1500",
+        "https://cdn.mos.cms.futurecdn.net/8Qa5GE3RnbZPrfKpd3w7eV.jpg"
+      ],
+      "stock": 1000,
+      "price": 350,
+      "market_price": 600,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Snake%20Plant%20price"
+    },
+    {
+      "id": 2,
+      "name": "Money Plant",
+      "category": "Indoor Plants",
+      "short_description": "Trailing vine with heart-shaped leaves, known for bringing good luck.",
+      "image": "https://plantsguru.com/cdn/shop/files/Money_Plant_Green_-_Good_Luck_Plant.jpg?v=1744915169&width=1500",
+      "images": [
+        "https://greenkin.in/cdn/shop/files/Indoor-money-plant-golden-in-metal-pot.webp?v=1725079042",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYSO3xLt7cuQ669kM1ytLIg-ap32zkarA5kg&s",
+        "https://bhoomigardencentre.com/wp-content/uploads/2025/12/Golden-Money-plant-With-Moss-Stick-3.webp",
+        "https://www.hariththarang.com/cdn/shop/files/money-plant-marble-with-hanging-pot-31820677775492_1024x1024.webp?v=1703659678",
+        "https://gardener.pk/wp-content/uploads/2025/05/MONEY-PLANT.webp"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 3,
+      "name": "Peace Lily",
+      "category": "Indoor Plants",
+      "short_description": "Elegant plant with white flowers and glossy leaves, thrives in low light.",
+      "image": "https://radhakrishnaagriculture.in/cdn/shop/files/peacelily.jpg?v=1709184309",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnsPuQnsSRIC2_AIAKpTBeeUzCP6UCqGiLeA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPVnzWqx7i-oT79P2gf6__Kvz-zM_mIeKqg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR80IGiB4DgCHOKUK_9SZ8YeAvQYwE_jLqPg&s",
+        "https://i.pinimg.com/564x/66/6f/30/666f308cb6b5d05f388f935403a8a187.jpg",
+        "https://rukminim2.flixcart.com/image/480/480/xif0q/shopsy-plant-sapling/5/0/u/perennial-yes-yes-peace-lily-or-spathiphyllum-live-plant-red-original-imahyjxfq6kvefmm.jpeg?q=90"
+      ],
+      "stock": 1000,
+      "price": 200
+    },
+    {
+      "id": 4,
+      "name": "Areca Palm",
+      "category": "Indoor Plants",
+      "short_description": "Tropical palm with feathery fronds, excellent air purifier for large spaces.",
+      "image": "https://cdn.shopify.com/s/files/1/0553/5711/2435/files/Areca-Palm-plant_480x480.jpg?v=1722232962",
+      "images": [
+        "https://eureka-farms.com/cdn/shop/files/07_PALM_ARECA_01.jpg?v=1747160168&width=1500",
+        "https://rootsraja.in/cdn/shop/files/Areca_palm.jpg?v=1747303916",
+        "https://rukminim2.flixcart.com/image/480/640/l1qrjbk0/plant-sapling/u/x/f/no-perennial-yes-areca-palm-ake001-1-elite-green-original-imagd8ughuhuyzct.jpeg?q=90",
+        "https://www.padmamnursery.com/cdn/shop/files/Areca-Palm-Silver-Planter-1200x1200-4e8ff514-04de-44fc-96cd-b9d684c301dd-_1.jpg?v=1728317647",
+        "https://radhakrishnaagriculture.in/cdn/shop/files/arecapalm.jpg?v=1709188424&width=1946"
+      ],
+      "stock": 1000,
+      "price": 500
+    },
+    {
+      "id": 5,
+      "name": "ZZ Plant",
+      "category": "Indoor Plants",
+      "short_description": "Glossy-leaved indoor plant that's nearly indestructible and drought tolerant.",
+      "image": "https://lovleaf.co.uk/wp-content/uploads/2024/02/PXL_20240207_160751706.PORTRAIT-600x1067.jpg",
+      "images": [
+        "https://www.urbanplant.in/cdn/shop/files/Primary_webp_1_b96f24fd-cc6e-4c16-915d-635c324a6a44.webp?v=1755616631",
+        "https://plantsguru.com/cdn/shop/files/zz-plant.png?v=1735618558",
+        "https://126437604.cdn6.editmysite.com/uploads/1/2/6/4/126437604/TACVCGD4E6A24I6HD3ERAXUK.jpeg",
+        "https://nurserynisarga.in/wp-content/uploads/2022/06/zz-collage-fin-02.webp",
+        "https://plantorbit.com/cdn/shop/files/ZZPlant_BlackZamiyaAirpurifyingPlant_2.webp?v=1770188909"
+      ],
+      "stock": 1000,
+      "price": 150
+    },
+    {
+      "id": 6,
+      "name": "Spider Plant",
+      "category": "Indoor Plants",
+      "short_description": "Variegated foliage plant with hanging babies, safe for pets.",
+      "image": "https://www.idyl.co.in/cdn/shop/articles/out-0_06436fe3-ace9-45f3-87cc-bb36e00958bb.png?v=1729832699",
+      "images": [
+        "https://m.media-amazon.com/images/I/61bfaK6hWpL._AC_UF1000,1000_QL80_.jpg",
+        "https://www.bhg.com/thmb/oDnjlrHprd67aYvinrMfQgVUPtQ=/5332x0/filters:no_upscale():strip_icc()/BHG-spider-plant-c0e0fdd5ec6e4c1588998ce3167f6579.jpg",
+        "https://i0.wp.com/plantoindia.in/wp-content/uploads/2024/05/51CCyxsXSPL._SX679__cleanup.jpg?fit=679%2C679&ssl=1",
+        "https://dukaan.b-cdn.net/700x700/webp/730950/570a0a01-8039-4174-b518-9bf54edfe5fb/spider-white-green-onlineplantscart-58303c25-4fe1-4797-a73e-647bfb9b19ab.jpg",
+        "https://rukminim2.flixcart.com/image/480/640/xif0q/plant-sapling/t/6/j/perennial-no-yes-spider-plant-hybrid-pack-of-1-1-pot-m-s-nature-original-imaghmrfgachxsfn.jpeg?q=20"
+      ],
+      "stock": 1000,
+      "price": 300
+    },
+    {
+      "id": 7,
+      "name": "Rubber Plant",
+      "category": "Indoor Plants",
+      "short_description": "Large-leaved plant with deep green color, adds dramatic statement to any room.",
+      "image": "https://nurserynisarga.in/wp-content/uploads/2020/12/IMG_4404.webp",
+      "images": [
+        "https://m.media-amazon.com/images/I/71z4dJMMBmL.jpg",
+        "https://royalsplant.com/wp-content/uploads/2023/10/Rubber_Tree_BB_600x600_9395d367-c2fe-423f-910b-035747597011_grande.webp",
+        "https://www.inntinn.in/cdn/shop/products/rubber-plant-tineke-inntinn-in-1.jpg?v=1760931504",
+        "https://m.media-amazon.com/images/I/61OjqXbZLrL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHlEZDzJRAMUvrligNhBa2GJr9NoIUCWvjgA&s"
+      ],
+      "stock": 1000,
+      "price": 300
+    },
+    {
+      "id": 8,
+      "name": "Aloe Vera",
+      "category": "Indoor Plants",
+      "short_description": "Succulent plant with healing gel, low maintenance and medicinal benefits.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREyQFy6sw9_1yAtyn2Jax7H7K6qlmpgCvn1g&s",
+      "images": [
+        "https://m.media-amazon.com/images/I/71vDeWZkH8L._AC_UF350,350_QL80_.jpg",
+        "https://m.media-amazon.com/images/I/71L7nHLHxVL._AC_UF1000,1000_QL80_.jpg",
+        "https://unlimitedgreens.com/cdn/shop/products/Aloe-Vera-Website-Front.webp?v=1763447030",
+        "https://plantorbit.com/cdn/shop/files/white-Photoroom-2025-08-10T104007.745.jpg?v=1770455918&width=416",
+        "https://thealtitudestore.com/cdn/shop/files/Aloe-Vera-Aloe-barbadensis-_miller_-2-Gallon_7_1080x_ebe5e737-c509-4af5-bd01-3893727bbfbb.webp?v=1748240155"
+      ],
+      "stock": 1000,
+      "price": 650
+    },
+    {
+      "id": 9,
+      "name": "Bamboo Palm",
+      "category": "Indoor Plants",
+      "short_description": "Feathery palm with bamboo-like stems, perfect for creating tropical ambiance.",
+      "image": "https://interiorfoliage.com/cdn/shop/products/Bamboo_Palm_Basket_1024x1024.jpg?v=1497982902",
+      "images": [
+        "https://www.saharanpurnursery.in/cdn/shop/files/Bamboopalm_600x600.jpg?v=1735973427",
+        "https://www.heyrooted.com/cdn/shop/files/PALM_BAMBOO_10-1.jpg?v=1722615419",
+        "https://lalitenterprise.com/cdn/shop/files/Untitled_design_-_2024-11-26T131212.404.webp?v=1732611641&width=1445",
+        "https://img.tatacliq.com/images/i22//437Wx649H/MP000000025165170_437Wx649H_202501290410231.jpeg",
+        "https://srinus.in/wp-content/uploads/2025/04/bamboo-palm-180.jpg"
+      ],
+      "stock": 1000,
+      "price": 550
+    },
+    {
+      "id": 10,
+      "name": "Chinese Evergreen",
+      "category": "Indoor Plants",
+      "short_description": "Colorful variegated leaves, extremely adaptable to various light conditions.",
+      "image": "https://www.whiteflowerfarm.com/mas_assets/cache/image/b/0/e/5/45285.Jpg",
+      "images": [
+        "https://www.gardendesign.com/pictures/images/900x705Max/site_3/chinese-evergreen-plant-aglaonema-shutterstock-com_15962.jpg",
+        "https://m.media-amazon.com/images/I/51eeJ-Tta7L._AC_UF1000,1000_QL80_.jpg",
+        "https://static1.squarespace.com/static/5e1a9e93d343ec0c523f4074/5e1be185a252892821e13d9f/5e87e88c87b9e86b9342711e/1718711894320/Red-Chinese-Evergreen.jpg?format=1500w",
+        "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/Red_Chinese_Evergreen_6_BB.jpg?v=1666973859",
+        "https://plantdetectives.com/cdn/shop/files/Aglaonema_RedSiam_12AGLOREDSI5_600x.jpg?v=1715194673"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 11,
+      "name": "Dracaena",
+      "category": "Indoor Plants",
+      "short_description": "Long-lasting houseplant with sword-like leaves and minimal care requirements.",
+      "image": "https://masonhome.in/cdn/shop/files/296.png?v=1749103348&width=1500",
+      "images": [
+        "https://www.bhg.com/thmb/6C8s4WEOURnfiX2szudRgVYtPyI=/1500x0/filters:no_upscale():strip_icc()/dracaena-houseplant-01-hero--68f36341781e404eb08d61587ac9bf3d.jpg",
+        "https://images.cdn-files-a.com/uploads/1826974/2000_5fdfca7fbc67d.jpg",
+        "https://m.media-amazon.com/images/I/61JES9Wj2iL._AC_UF1000,1000_QL80_.jpg",
+        "https://dukaan.b-cdn.net/700x700/webp/media/48f80d53-1715-4e60-b9fd-b30f33be3585.png",
+        "https://patuxentnursery.com/wp-content/uploads/2025/07/Dracaena-Colorama-1.jpg"
+      ],
+      "stock": 1000,
+      "price": 950,
+      "market_price": 479000,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Dracaena%20price"
+    },
+    {
+      "id": 12,
+      "name": "Monstera Deliciosa",
+      "category": "Indoor Plants",
+      "short_description": "Iconic plant with split leaves and aerial roots, stunning as a statement piece.",
+      "image": "https://plantersplace.com/wp-content/uploads/2022/08/20200309_110255-scaled.jpg",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/Monstera_Deliciosa_Swiss_Cheese_Plant.jpg?v=1756377815&width=1500",
+        "https://www.ugaoo.com/cdn/shop/files/2_430a864d-f4ed-46d0-b5e6-ff0d55c422db.jpg?v=1706608270",
+        "https://ashiyanastore.com/cdn/shop/files/Screenshot-2024-09-19-10-01-38-09_6012fa4d4ddec268fc5c7112cbb265e7.jpg?v=1726720437",
+        "https://florastore.com/cdn/shop/files/3512101_Atmosphere_04_SQ_MJ.jpg?v=1764599758&width=1080",
+        "https://loveforplants.in/cdn/shop/files/copy-of-75-90cm-monstera-deliciosa-swiss-cheese-plant-19cm-pot-house-plant-house-plant-115681.jpg?v=1750789061"
+      ],
+      "stock": 1000,
+      "price": 350
+    },
+    {
+      "id": 13,
+      "name": "Calathea",
+      "category": "Indoor Plants",
+      "short_description": "Stunning patterned leaves that fold at night, thrives in humid environments.",
+      "image": "https://www.ugaoo.com/cdn/shop/articles/Calathea.jpg?v=1692786261",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2R3oZ3di1uAhbDMSm-JOPMgiPmn6XDbAAdQ&s",
+        "https://m.media-amazon.com/images/I/61ZH5reEL4L._AC_UF1000,1000_QL80_.jpg",
+        "https://www.ecoonplants.com/images/thumbs/0000257_calathea-ornata_550.png",
+        "https://unlimitedgreens.com/cdn/shop/articles/Care-for-Varieties-of-Calathea.jpg?crop=center&height=1024&v=1677534603&width=1024",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-plants-calathea-corona-plant.jpg?v=1634215235"
+      ],
+      "stock": 1000,
+      "price": 300
+    },
+    {
+      "id": 14,
+      "name": "Fiddle Leaf Fig",
+      "category": "Indoor Plants",
+      "short_description": "Large dramatic leaves, elegant indoor tree perfect for modern interiors.",
+      "image": "https://rukminim2.flixcart.com/image/480/640/krwec280/plant-sapling/s/f/a/set-of-2-fiddle-leaf-fig-plant-combo-02-click-to-buy-original-imag5kg3rhknpjq4.jpeg?q=90",
+      "images": [
+        "https://nurturinggreen.in/cdn/shop/products/PKP05753_1800x1800.jpg?v=1650457881",
+        "https://logam.in/cdn/shop/files/062A8193_800x.jpg?v=1737533373",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWQ7zHzBluM26dZNcuVHMaAN8uLHW-o80-Q&s",
+        "https://cdn.shopify.com/s/files/1/0062/8532/8445/products/Bambino_FIddleLeafFIg_3_BB.jpg?v=1641843293",
+        "https://nurserynisarga.in/wp-content/uploads/2021/10/Untitled-design-2025-12-18T162025.192.webp"
+      ],
+      "stock": 1000,
+      "price": 600,
+      "market_price": 520500,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Fiddle%20Leaf%20Fig%20price"
+    },
+    {
+      "id": 15,
+      "name": "Jade Plant",
+      "category": "Indoor Plants",
+      "short_description": "Succulent with thick stems and glossy leaves, symbol of prosperity.",
+      "image": "https://m.media-amazon.com/images/I/51n0fa4c-iL._AC_UF1000,1000_QL80_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/51jQmZ80tOL._AC_UF1000,1000_QL80_.jpg",
+        "https://hips.hearstapps.com/hmg-prod/images/jade-plant-lucky-plant-money-plant-or-money-tree-royalty-free-image-1691772399.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=1200:*",
+        "https://imgcdn.floweraura.com/jade-in-blossom-plate-pot-9838437pl-D_0.jpg",
+        "https://vgrgardens.com/wp-content/uploads/2024/11/Untitled-design-2025-03-12T114447.995.png",
+        "https://dukaan.b-cdn.net/700x700/webp/media/110da9c0-1016-4972-8379-d51cde2e5564.png"
+      ],
+      "stock": 1000,
+      "price": 750,
+      "market_price": 457050,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Jade%20Plant%20price"
+    },
+    {
+      "id": 16,
+      "name": "Lucky Bamboo",
+      "category": "Indoor Plants",
+      "short_description": "Ornamental bamboo stalks in water or soil, brings good fortune and feng shui.",
+      "image": "https://m.media-amazon.com/images/I/518eaTa9hmL._AC_UF1000,1000_QL80_.jpg",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/3-Layer-Lucky-Bamboo-Plant-in-a-Bowl-with-Pebbles_2.jpg?v=1737719520&width=416",
+        "https://cdn.commmerce.com/uploads/pasumai-thottakalai-1/productImages/full/17250804896407photo_2024-08-31_10-30-28.jpg",
+        "https://www.fnp.com/images/pr/l/v20241216124647/lucky-bamboo-plant-in-rustic-red-pot_1.jpg",
+        "https://plantmitra.com/cdn/shop/files/1_16.webp",
+        "https://nurturinggreen.in/cdn/shop/products/5_8f848376-a304-48ad-a921-1216a47853e2_1080x.jpg?v=1664619933"
+      ],
+      "stock": 1000,
+      "price": 150
+    },
+    {
+      "id": 17,
+      "name": "Croton",
+      "category": "Indoor Plants",
+      "short_description": "Colorful foliage with red, yellow, and orange hues, requires bright light.",
+      "image": "https://www.hariththarang.com/cdn/shop/files/920DF0BF-CA97-48C0-BEC2-2D871C09EE87_1024x1024.jpg?v=1735645304",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0-VrbvoVI4XsS0mVFaR4UqXS1LJN2YJK53w&s",
+        "https://www.jiomart.com/images/product/original/rv0pjyegal/platone-croton-plant-cp102-product-images-orv0pjyegal-p607875021-0-202402110039.jpg?im=Resize=(420,420)",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvN6HHF5XdMZUSR58TiAEDcRzk7MoIiN4ZFw&s",
+        "https://ashokchakranursery.com/cdn/shop/files/croton.webp?v=1748408342",
+        "https://budsnblush.com/cdn/shop/files/croton_gold_dust_bnb.png?v=1757353308"
+      ],
+      "stock": 1000,
+      "price": 1000
+    },
+    {
+      "id": 18,
+      "name": "Boston Fern",
+      "category": "Indoor Plants",
+      "short_description": "Feathery fronds that create a bushy appearance, loves humidity and indirect light.",
+      "image": "https://plantsguru.com/cdn/shop/files/3_Boston_Fern-Photoroom.jpg?v=1736604303&width=1500",
+      "images": [
+        "https://cdn.makemygarden.com/uploads/2021/09/171.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2022/9/CU/SW/BG/159591572/boston-fern-indoor-plant.jpg",
+        "https://exoticflora.in/cdn/shop/products/greenbostonfern3_900x.jpg?v=1604037772",
+        "https://costafarms.com/cdn/shop/files/L-BOS-P-WMC-01-CF--white_411c64f6-cb73-419c-8204-eb2154c19b62_2048x2048.jpg?v=1707335297",
+        "https://shopaltmanplants.com/cdn/shop/files/6IN_Nephrolepis_Compacta_Boston_Fern_blk_pot_lifestyle_final_4.jpg?v=1741835914"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 19,
+      "name": "Syngonium",
+      "category": "Indoor Plants",
+      "short_description": "Arrow-shaped leaves with pink or white variegation, climbing or trailing vine.",
+      "image": "https://www.della.in/wp-content/uploads/2024/05/Della-Nursery-Indoor-Plants-Syngonium-Green-1ft.-NURS-WP-533396.jpg",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/pg-syngonium-variegated.jpg?v=1735618559",
+        "https://dreamgreen.in/cdn/shop/files/E84BE241-50FE-49E3-951C-5C060477F7CC.jpg?v=1722412446&width=1946",
+        "https://aventura-gardens.com/wp-content/uploads/2025/04/Syngonium-%E2%80%98Batik-1.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz4n_blQKxpkN1qZciNzpdCDZRYqJswshXqg&s",
+        "https://sanjaynursery.com/wp-content/uploads/2025/03/pink-syngonium-plant-care-tips.jpg"
+      ],
+      "stock": 1000,
+      "price": 950,
+      "market_price": 560550,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Syngonium%20price"
+    },
+    {
+      "id": 20,
+      "name": "Dieffenbachia",
+      "category": "Indoor Plants",
+      "short_description": "Large patterned leaves with white variegation, adds tropical feel indoors.",
+      "image": "https://www.ugaoo.com/cdn/shop/files/xl_in_round_pot_-023.jpg?v=1741422585",
+      "images": [
+        "https://adplants.com/cdn/shop/files/indoor-plant-default-plastic-dieffenbachia-compacta-dieffenbachia-compacta-1172621453.jpg?v=1753871887&width=1920",
+        "https://www.plantvine.com/plants/Dieffenbachia-Tropic-Snow-3G-Variation-800x1000.jpg",
+        "https://bloomscape.com/wp-content/uploads/2022/02/bloomscape_dieffenbachia_10in_clay-scaled.jpg?ver=675709",
+        "https://cdn.shopify.com/s/files/1/0013/3529/6118/files/a63a6b74180b.jpg?v=1605215862",
+        "https://www.lamuse.in/cdn/shop/files/FirstImage_c6a837fc-9857-4e54-afdb-d9be69ec4df8.jpg?v=1736243461&width=1946"
+      ],
+      "stock": 1000,
+      "price": 950,
+      "market_price": 931350,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Dieffenbachia%20price"
+    },
+    {
+      "id": 21,
+      "name": "Parlor Palm",
+      "category": "Indoor Plants",
+      "short_description": "Graceful palm with delicate fronds, perfect for creating elegant spaces.",
+      "image": "https://www.michlers.com/cdn/shop/products/ParlorPalm_Large_8ae62996-1384-4cf3-adcc-c46f8032460b.jpg?v=1675878348&width=2048",
+      "images": [
+        "https://m.media-amazon.com/images/I/51Dqzy63pCL._AC_UF1000,1000_QL80_.jpg",
+        "https://www.rollingnature.com/cdn/shop/products/PLPPMCEAPGL-W-Part2.jpg?v=1669452844&width=1946",
+        "https://myperfectplants.com/cdn/shop/products/ParlorPalm_2_720x.jpg?v=1707163900",
+        "https://media.istockphoto.com/id/988625944/photo/bright-living-room-with-houseplant-on-the-floor-in-a-wicker-basket.jpg?s=612x612&w=0&k=20&c=sSyhaASJvCG_Zf-N1LmU3v6eod2QMYSl0SzlKwFsmv4=",
+        "https://www.bhg.com/thmb/2bkC8bkMMJJr7agI2ASeuEVNGIE=/1244x0/filters:no_upscale():strip_icc()/parlor-palm-in-cream-colored-pot-808275b6-9821ebe3be464d19832df0c5afc21616.jpg"
+      ],
+      "stock": 1000,
+      "price": 950
+    },
+    {
+      "id": 22,
+      "name": "Aglaonema",
+      "category": "Indoor Plants",
+      "short_description": "Colorful foliage in red, pink, and cream tones, highly adaptable houseplant.",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/498117469/TN/GK/FH/149061365/12-inches-aglaonema-pink-beauty-plant.webp",
+      "images": [
+        "https://m.media-amazon.com/images/I/61Yk5ZbmkeL._AC_UF1000,1000_QL80_.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2024/12/475515026/MS/MB/MF/189485117/indoor-plant-500x500.jpg",
+        "https://m.media-amazon.com/images/I/61W3K1Es5oL.jpg",
+        "https://www.chhajedgarden.com/cdn/shop/files/Air-Purifying-Aglaonema.jpg?v=1700646643",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSAXmJT0a4kmB6Y7FrtxnbXUWtftkGTMK_hA&s"
+      ],
+      "stock": 1000,
+      "price": 450
+    },
+    {
+      "id": 23,
+      "name": "Begonia",
+      "category": "Indoor Plants",
+      "short_description": "Colorful foliage with red undersides, delicate flowers in various shades.",
+      "image": "https://www.gardendesign.com/pictures/images/900x705Max/site_3/begonia-surefire-rose-pink-begonia-potted-begonia-proven-winners_15847.jpg",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/Begonia_Red_Plant2.jpg?v=1745507518&width=1500",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-begonia-red-plant.jpg?v=1634216766",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISk4rxMB_AGT2OdRPsN1z3RDKqPzCxW7nhw&s",
+        "https://m.media-amazon.com/images/I/61ByEkCNbXL._AC_UF1000,1000_QL80_.jpg",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-hardy-begonia-plant.jpg?v=1634223205"
+      ],
+      "stock": 1000,
+      "price": 500,
+      "market_price": 249000,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Begonia%20price"
+    },
+    {
+      "id": 24,
+      "name": "Peperomia",
+      "category": "Indoor Plants",
+      "short_description": "Compact plant with decorative leaves, perfect for desks and small spaces.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSVtKh0jldfObqs86WtMR0Oa3mHPPNwgo-A&s",
+      "images": [
+        "https://gardenerspath.com/wp-content/uploads/2025/10/How-to-Grow-Peperomia-Feature.jpg",
+        "https://www.bhg.com/thmb/_lhWmF0D2lO-_wsGvc8Qsd-tm0k=/4000x0/filters:no_upscale():strip_icc()/how-to-grow-and-plant-peperomia-variegated-baby-rubber-plant-01-2f2d79952f6a4522b929e16551507e1f.jpg",
+        "https://www.ecoonplants.com/images/thumbs/0000639_water-melon-peperomia.jpeg",
+        "https://plantsguru.com/cdn/shop/files/peperomia-caparata.jpg?v=1735616895",
+        "https://mobileimages.lowes.com/productimages/b3c20377-0dff-4346-b29a-e78a7da0a391/66751250.jpeg"
+      ],
+      "stock": 1000,
+      "price": 250
+    },
+    {
+      "id": 25,
+      "name": "Petunia",
+      "category": "Indoor Plants",
+      "short_description": "Arrow-shaped leaves with pink or white variegation, climbing or trailing vine.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNTBFQfjsFqwZQ0QD9aU1ZBlEhafLGKvnF1Q&s",
+      "images": [
+        "https://cdn.mos.cms.futurecdn.net/VZJsr8krmoQBouVjjnPvxZ.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwbBOGzlgyOg2rM3aRvRrUpHq2DZoTTx_kbQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJTKPAzgRRvqw0aQD-c8HlOTvk0vTVHEExg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJqDDQjCsjq3Hv17eCce1__t50RYTspOFjWw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsBI03zLmHkEAqKeQeuJn---HqEcoN9oiQ0w&s"
+      ],
+      "stock": 1000,
+      "price": 150
+    },
+    {
+      "id": 26,
+      "name": "Ashoka Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Ornamental tree with vibrant orange flowers, symbol of prosperity and happiness.",
+      "image": "https://auragreens.org/wp-content/uploads/2020/12/28.jpg",
+      "images": [
+        "https://lalitenterprise.com/cdn/shop/files/Ashoka_Pendula_Plant_2.webp?v=1766302107&width=1445",
+        "https://lalitenterprise.com/cdn/shop/files/Ashoka_Pendula_Plant.webp?v=1766302107",
+        "https://bhairavbioplantech.org/wp-content/uploads/2023/02/61wREt1ym-L._SX466_-450x492.jpg",
+        "https://ashokchakranursery.com/cdn/shop/files/ashoka.webp?v=1748408262",
+        "https://www.dabur.com/Medical%20Plants/Ashoka.jpg"
+      ],
+      "stock": 1000,
+      "price": 400
+    },
+    {
+      "id": 27,
+      "name": "Peepal Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Sacred fig tree revered in Buddhism and Hinduism, excellent shade provider.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqpLTkq4lWThwaMbbuH3Eg8VpZn-ixlZQGA&s",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/peepal-tree-religiosa.webp?v=1750145859",
+        "https://assets.livlong.com/blogs/health-benefits-of-peepal-tree-1769495879026-fa8dpiml1w.webp",
+        "https://static.vecteezy.com/system/resources/previews/071/596/168/large_2x/top-tree-with-young-green-leaves-of-sacred-tree-or-sacred-fig-another-name-is-peepal-tree-bo-tree-bodhi-peepal-of-india-pipal-of-india-peepul-of-india-free-photo.JPG",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa24dQZvfQN5g9mGNDldoOdYU2GYlSA4Y-xQ&s",
+        "https://t4.ftcdn.net/jpg/10/43/80/71/360_F_1043807190_l4AMiZ4mfoNv95VjQWFpgIwCIhtp3QQp.jpg"
+      ],
+      "stock": 1000,
+      "price": 800
+    },
+    {
+      "id": 28,
+      "name": "Banyan Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Massive shade tree with aerial roots, symbolic of strength and longevity.",
+      "image": "https://dms.mydukaan.io/original/jpeg/730950/570a0a01-8039-4174-b518-9bf54edfe5fb/ficus-benghalensis-banyan-plant-5214d258-2993-4ce1-8288-6b8769ecfd57.jpg",
+      "images": [
+        "https://lucknownursery.com/wp-content/uploads/2021/06/banyan_LN.jpg",
+        "https://m.media-amazon.com/images/I/81+UWdKqAaL._AC_UF1000,1000_QL80_.jpg",
+        "https://5.imimg.com/data5/ANDROID/Default/2025/9/544519900/JX/IA/TL/141175285/product-jpeg.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBXB29g4C5NwM-CmTm8Yg214NCaxAx2tik2w&s",
+        "https://eureka-farms.com/cdn/shop/files/04937AB9-8A3D-4B9F-826A-AF525A90F18D.jpg?v=1742422491&width=1500"
+      ],
+      "stock": 1000,
+      "price": 200
+    },
+    {
+      "id": 29,
+      "name": "Gulmohar",
+      "category": "Outdoor Plants",
+      "short_description": "Ornamental tree with spectacular flame-red flowers, perfect for landscaping.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtl2oc10ZNjH6Lw1uiH408v1jUUyXR3DrDeQ&s",
+      "images": [
+        "https://manbhawannursery.in/cdn/shop/files/GulmoharPlant.png?v=1763267834",
+        "https://hasiruagro.com/wp-content/uploads/2024/03/gulmohar-plant-hasiru-agro.webp",
+        "https://plantsguru.com/cdn/shop/files/yellow-gulmohar.jpg?v=1739864263",
+        "https://www.della.in/wp-content/uploads/2024/05/Gulmohar-Tree-NURS-WP-532306.jpg",
+        "https://m.media-amazon.com/images/I/81gMg0nPvrL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 30,
+      "name": "Indian Almond Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Tropical shade tree with edible nuts, beautiful umbrella-shaped canopy.",
+      "image": "https://msbecl.ac.in/uploads/page/page-1724411102.jpg",
+      "images": [
+        "https://nurserynisarga.in/wp-content/uploads/2022/03/badam-3.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18ZI7rBK5YozrE_vqR3OHNx5nikVJAsNNYQ&s",
+        "https://productimages.withfloats.com/serviceimages/tile/6627a7c8431840fd4f9f43faBadamChettu",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMaY1vYnV4_Vf48VONbXSOFgCrnrPVCTekLQ&s",
+        "https://www.kisanshop.in/uploads/grafted-kaju-badam-plant.webp"
+      ],
+      "stock": 1000,
+      "price": 850
+    },
+    {
+      "id": 31,
+      "name": "Teak Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Premium timber tree with beautiful golden wood, excellent for landscaping.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUTNEbbW8YWHVEIEqcI4ZmnK1m6NozDyCbQ&s",
+      "images": [
+        "https://manbhawannursery.in/cdn/shop/files/TeakTree.png?v=1763267027",
+        "https://5.imimg.com/data5/ANDROID/Default/2025/6/515823619/ZF/JD/FH/199809138/product-jpeg-500x500.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Starr_010304-0485_Tectona_grandis.jpg/1280px-Starr_010304-0485_Tectona_grandis.jpg",
+        "https://paudhshala.com/media/catalog/product/cache/cddf5fb8ab734d8b46ea9aa1099e7b62/t/e/tectona-grandis-tree.jpg",
+        "https://www.hugaplant.com/cdn/shop/products/MAIN_12ee3612-03bf-4aba-8b53-6fd62b69e9cf.png?v=1674619637"
+      ],
+      "stock": 1000,
+      "price": 300
+    },
+    {
+      "id": 32,
+      "name": "Silver Oak",
+      "category": "Outdoor Plants",
+      "short_description": "Fast-growing shade tree with silver-gray foliage, excellent for reforestation.",
+      "image": "https://nurserynisarga.in/wp-content/uploads/2024/02/Untitled-design.webp",
+      "images": [
+        "https://kadiyamrajasrinursery.com/cdn/shop/files/product-jpeg-500x500_193d5d88-ed9e-4f40-808c-8ae446d01a7b_500x332.jpg?v=1690374187",
+        "https://rknurserygarden.com/wp-content/uploads/2025/09/SILVER-OAK.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqoesqJ1hFt7YIhZlgwUE3tLvNEbkHRBCkqQ&s",
+        "https://www.naturenursery.in/wp-content/uploads/2020/04/SILVER-OAK2.jpg",
+        "https://nurserynisarga.in/wp-content/uploads/2024/02/Untitled-design.webp"
+      ],
+      "stock": 1000,
+      "price": 650
+    },
+    {
+      "id": 33,
+      "name": "Kadamba Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Sacred tree associated with Lord Krishna, fragrant white flowers.",
+      "image": "https://dukaan.b-cdn.net/700x700/webp/media/4d741a91-b19b-4fc7-a2f9-0aec94111398.png",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2025/6/520468560/CY/DR/IF/88930720/green-kadamba-plant.jpeg",
+        "https://dukaan.b-cdn.net/700x700/webp/media/28aa93b0-d391-4a98-88c2-bee518572e05.jpg",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-kadamba-anthocephalus-cadamba-seeds-1_600x600.jpg?v=1634222709",
+        "https://www.padmamnursery.com/cdn/shop/files/kadamba-benefits-main.jpg?v=1728318832&width=1024",
+        "https://m.media-amazon.com/images/I/719nmFHOURL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 34,
+      "name": "Date Palm",
+      "category": "Outdoor Plants",
+      "short_description": "Tropical palm with sweet date fruit, majestic appearance.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf-e4_DEq9sYpIN1UQBU7J7ijPXrlt_vqhVA&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvJAw4550fVYuNjLCfgBqSci0DaCwSXtj4iA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ48Veh7F2NNa34t4CxSRvRTvV7QyDcAHmw2Q&s",
+        "https://nurserynisarga.in/wp-content/uploads/2024/06/Date-palm6.webp",
+        "https://m.media-amazon.com/images/I/61-Nn5+sPtL._AC_UF1000,1000_QL80_.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/250px-Dates005.jpg"
+      ],
+      "stock": 1000,
+      "price": 350,
+      "market_price": 238800,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Date%20Palm%20price"
+    },
+    {
+      "id": 35,
+      "name": "Foxtail Palm",
+      "category": "Outdoor Plants",
+      "short_description": "Feathery-frond palm resembling fox tail, tropical landscape accent.",
+      "image": "https://images.jdmagicbox.com/quickquotes/images_main/foxtail-palm-plant-2217685903-bkv7vstv.jpg",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T9xnpxsxilb_HVw2KDyq_gd0c7o0kOa34Q&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-IPUTKNhchcz-pDsNsO-wnJ04cnzP5iQdDA&s",
+        "https://m.media-amazon.com/images/I/31J-O34ndbL._AC_UF1000,1000_QL80_.jpg",
+        "https://www.saharanpurnursery.in/cdn/shop/files/WhatsAppImage2024-12-02at1.38.46M_1200x1602.jpg?v=1735817882",
+        "https://nurserynisarga.in/wp-content/uploads/2022/08/2-9.webp"
+      ],
+      "stock": 1000,
+      "price": 500,
+      "market_price": 209700,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Foxtail%20Palm%20price"
+    },
+    {
+      "id": 36,
+      "name": "Royal Palm",
+      "category": "Outdoor Plants",
+      "short_description": "Elegant tall palm with white trunk, ideal for grand landscaping.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRct3TnSBDboEJ5NhFHk_R0yDJ94SW5k_2qhg&s",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/royal-palm-tree_2.jpg?v=1745837912&width=1500",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kD1IJralg0NPS6RbAaLXc1Ao0Df65B4ufA&s",
+        "https://static.wixstatic.com/media/6c9b82_85beb42110a449cab3d9b0e4380200fc~mv2.jpg/v1/fill/w_480,h_542,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6c9b82_85beb42110a449cab3d9b0e4380200fc~mv2.jpg",
+        "https://www.terraforma.ae/shop/wp-content/uploads/2014/05/PMRR_1.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXq90RSa7uLOncICMuKa4B6XGc8vS6lValEA&s"
+      ],
+      "stock": 1000,
+      "price": 100
+    },
+    {
+      "id": 37,
+      "name": "Jacaranda Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Beautiful tree with purple-blue flowers, stunning during bloom season.",
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-jacaranda-mimosifolia-neel-mohar-0-5-kg-seeds-16968964407436.jpg?v=1634222509",
+      "images": [
+        "https://i.redd.it/4ua6g3gno9oz.jpg",
+        "https://m.media-amazon.com/images/I/913McE3uCiL.jpg",
+        "https://i0.wp.com/mrplantgeek.com/wp-content/uploads/2020/05/jamsaka01-Jacaranda-Bonsai-Blue_Pot-1.jpg?resize=500%2C751&ssl=1",
+        "https://www.planetnatural.com/wp-content/uploads/2023/09/Jacaranda-Tree.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WMfGv4LVJyvQjWCFMiY3ZJGm9AGwCvAUFA&s"
+      ],
+      "stock": 1000,
+      "price": 800
+    },
+    {
+      "id": 38,
+      "name": "Tabebuia Rosea",
+      "category": "Outdoor Plants",
+      "short_description": "Pink trumpet tree with showy pink flowers, excellent for landscaping.",
+      "image": "https://plantshub.in/wp-content/uploads/2024/07/rosy1.jpeg",
+      "images": [
+        "https://kadiyamrajasrinursery.com/cdn/shop/files/tabebuia-rosea-plant_1200x1200_crop_center.jpg?v=1690181912",
+        "https://m.media-amazon.com/images/I/81SiWD4wWiL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 950
+    },
+    {
+      "id": 39,
+      "name": "Cassia Fistula (Golden Shower Tree)",
+      "category": "Outdoor Plants",
+      "short_description": "Golden yellow flower tree, national flower of Thailand.",
+      "image": "https://plantsguru.com/cdn/shop/files/Golden_Shower_Tree_-_Amaltas_Cassia_Fistula_Plant.jpg?v=1747054205",
+      "images": [
+        "https://m.media-amazon.com/images/I/31rP8bMOMoL._AC_UF350,350_QL80_.jpg",
+        "https://mahindranursery.com/cdn/shop/files/cassiafistula.jpg?v=1685352239&width=800",
+        "https://m.media-amazon.com/images/I/71kiCSmyV0L._AC_UF1000,1000_QL80_.jpg",
+        "https://m.media-amazon.com/images/I/81FdbxZvmlL.jpg",
+        "https://plantsguru.com/cdn/shop/files/Golden_Shower_Tree_-_Amaltas_Cassia_Fistula_Plant.jpg?v=1747054205"
+      ],
+      "stock": 1000,
+      "price": 350
+    },
+    {
+      "id": 40,
+      "name": "Bael Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Sacred medicinal fruit tree, valued in traditional medicine.",
+      "image": "https://dukaan.b-cdn.net/700x700/webp/upload_file_service/c2e8d395-e21d-4ea6-ab28-445f83faac9a/icinal-holy-plants-onlineplantscart-in-3.png",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2023/10/356813881/BF/TW/BE/117246671/bael-patra-plant-500x500.jpg",
+        "https://gabbarfarms.com/cdn/shop/products/Bael_Patra_2048x.jpg?v=1641134453",
+        "https://medicinallive.com/wp-content/uploads/2022/01/vvazw0qoebc78jxykoo1.png"
+      ],
+      "stock": 1000,
+      "price": 950
+    },
+    {
+      "id": 41,
+      "name": "Kachnar Tree",
+      "category": "Outdoor Plants",
+      "short_description": "Pink-purple flowering tree, medicinal qualities, harbinger of spring.",
+      "image": "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp",
+      "images": [
+        "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp",
+        "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp",
+        "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp",
+        "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp",
+        "https://bagwaninursery.com/wp-content/uploads/2024/05/1-11-1.webp"
+      ],
+      "stock": 1000,
+      "price": 750
+    },
+    {
+      "id": 42,
+      "name": "Bougainvillea",
+      "category": "Flowering Plants",
+      "short_description": "Vibrant colorful bracts in pink, purple, and orange, heat-loving climber.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBS1CVImtN_HvIvybK182TsC0XR8JWJvi-cg&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfIglRr9z2Q20lS-QrmnhvQuO0PUMNN1eL7A&s",
+        "https://rukminim2.flixcart.com/image/480/640/xif0q/plant-sapling/g/e/c/yes-annual-yes-bougainvillea-plant-12rdsfd-1-plastic-bag-save-original-imaghsd9xc5uqztv.jpeg?q=90",
+        "https://www.dekorcompany.com/cdn/shop/files/DEKO0462.png?v=1738314260",
+        "https://radhakrishnaagriculture.in/cdn/shop/files/WhatsAppImage2024-03-14at2.57.10PM_2.jpg?v=1710411340",
+        "https://m.media-amazon.com/images/I/91mnsbhjduL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 450
+    },
+    {
+      "id": 43,
+      "name": "Hibiscus",
+      "category": "Flowering Plants",
+      "short_description": "Large showy flowers in red, pink, and yellow, tropical flowering shrub.",
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-g-hibiscus-gudhal-flower-red-plant-213118_600x600.jpg?v=1751707084",
+      "images": [
+        "https://costafarms.com/cdn/shop/articles/Costa-Farms-Tricolor-HibisQs-Hibiscus-Bowl_b6edd42f-baf0-4644-b88c-75fb1792fda3_1000x1000.jpg?v=1758827010",
+        "https://m.media-amazon.com/images/I/61gF7mmbnzL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx9FgHgDajiEVepC-TR-vapzdIrSI6mQmCUA&s",
+        "https://kallecoplantnursery.com/wp-content/uploads/2018/08/IMG_20180801_083717.jpg",
+        "https://royalsplant.com/wp-content/uploads/2023/12/WhatsApp-Image-2023-10-29-at-11.39.17_4bf0fe66.jpg"
+      ],
+      "stock": 1000,
+      "price": 500
+    },
+    {
+      "id": 44,
+      "name": "Rose",
+      "category": "Flowering Plants",
+      "short_description": "Queen of flowers with fragrant blooms in endless colors and varieties.",
+      "image": "https://www.jiomart.com/images/product/original/rvibirnytu/cloud-farm-real-live-dark-red-rose-live-plant-hybrid-for-balcony-terrace-outdoor-gardening-cf_2064-product-images-orvibirnytu-p603649580-0-202308050834.jpg?im=Resize=(1000,1000)",
+      "images": [
+        "https://lucknownursery.com/wp-content/uploads/2020/09/ros2-1.jpg",
+        "https://gardengram.in/cdn/shop/files/PinkRoseZoomed.jpg?v=1707717356",
+        "https://hips.hearstapps.com/hmg-prod/images/growing-planting-pruning-roses-66be6908c719d.jpg?crop=1.00xw:0.654xh;0,0.290xh&resize=1200:*",
+        "https://paudhshala.com/media/catalog/product/cache/cddf5fb8ab734d8b46ea9aa1099e7b62/p/i/pini-buton-rose-miniature.png",
+        "https://lucknownursery.com/wp-content/uploads/2020/11/orang1.jpg"
+      ],
+      "stock": 1000,
+      "price": 650
+    },
+    {
+      "id": 45,
+      "name": "Ixora",
+      "category": "Flowering Plants",
+      "short_description": "Clustered flowers in red, orange, pink, or yellow, attracts butterflies.",
+      "image": "https://lalitenterprise.com/cdn/shop/files/Dwarf_Ixora_Plant.webp?v=1742386086",
+      "images": [
+        "https://assets.myntassets.com/w_360,q_50,,dpr_2,fl_progressive,f_webp/assets/images/29873449/2024/6/1/d4a1f4e0-651c-46fd-b4a4-2153a960dc921717224621497AssortedGifts2.jpg",
+        "https://greenparadiselive.com/cdn/shop/files/Yellow_Ixora_1.png?v=1728197943&width=1920",
+        "https://nurserynisarga.in/wp-content/uploads/2022/08/pink.webp",
+        "https://planaplant.com/cdn/shop/products/Websiteproductsize_7_87d856f3-fc38-4a5c-a316-dc76ca633850_627x700.jpg?v=1648536786",
+        "https://www.padmamnursery.com/cdn/shop/files/1723.jpg?v=1728318510"
+      ],
+      "stock": 1000,
+      "price": 550
+    },
+    {
+      "id": 46,
+      "name": "Marigold",
+      "category": "Flowering Plants",
+      "short_description": "Bright golden-yellow flowers, pest-repellent and excellent for borders.",
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-g-african-marigold-yellow-plant-398336.jpg?v=1679749016",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlYgYUDoANAo-wNyO_Muak3aqhH3_UWWSS1A&s",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-g-african-marigold-orange-plant-153227.jpg?v=1679749014",
+        "https://veryplants.com/cdn/shop/articles/growing-marigolds-in-pots-a-step-by-step-guide-img.jpg?v=1718353714",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdsP8MNvODiqLhAnVhfA7WRt_RZpM1i7CMZA&s",
+        "https://m.media-amazon.com/images/I/61xGHYaBciL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 150
+    },
+    {
+      "id": 47,
+      "name": "Jasmine",
+      "category": "Flowering Plants",
+      "short_description": "Fragrant white flowers, climbing vine with heavenly night-time scent.",
+      "image": "https://www.thespruce.com/thmb/TolkPzwTIRAu5a2aUO8ZSAoimm8=/683x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1518339001-fc6c5847f258415ca36403be6e813d5d.jpg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2025/7/532138323/XV/NX/ZP/248625801/jasmine-plant.jpg",
+        "https://rukminim2.flixcart.com/image/480/640/xif0q/plant-sapling/4/p/y/perennial-no-yes-arabian-jasmine-beli-flower-mogra-double-petal-original-imaghvffcz7gnfdk.jpeg?q=90",
+        "https://nurserylive.com/cdn/shop/files/kunda_43871f42-7f02-4e8f-9526-1420fe3101f1.jpg?v=1752740030",
+        "https://m.media-amazon.com/images/I/51bShVw1mIS._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3gxAmRsr8PN1PckMMHgfvdYA8tB25ae5tgQ&s"
+      ],
+      "stock": 1000,
+      "price": 250
+    },
+    {
+      "id": 48,
+      "name": "Plumeria",
+      "category": "Flowering Plants",
+      "short_description": "Fragrant tropical flowers in white, pink, and yellow, deciduous shrub.",
+      "image": "https://nurserylive.com/cdn/shop/files/champa-pink.jpg?v=1752745235",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv2AgOAQRQoDTYR7iYkDUsuPpPiiakNpc0qQ&s",
+        "https://plantsguru.com/cdn/shop/files/pg-plumeria-dwarf-flower.jpg?v=1735618719",
+        "https://5.imimg.com/data5/ECOM/Default/2023/9/347302131/GY/GR/ZT/133331885/plumeriayellowshades-2181830463-shut-sqweb.webp",
+        "https://rukminim2.flixcart.com/image/480/640/kvcpn680/plant-sapling/r/m/b/no-perennial-yes-plumeria-flower-live-plant-cf2-1-cloud-farm-original-imag8afxszexqzwj.jpeg?q=90",
+        "https://www.jiomart.com/images/product/original/rvsegb7ksl/online-plant-bazar-yellow-plumeria-champa-live-plant-product-images-orvsegb7ksl-p603983654-0-202308200017.jpg?im=Resize=(1000,1000)"
+      ],
+      "stock": 1000,
+      "price": 850,
+      "market_price": 57000,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Plumeria%20price"
+    },
+    {
+      "id": 49,
+      "name": "Chrysanthemum",
+      "category": "Flowering Plants",
+      "short_description": "Daisy-like flowers in various colors, blooms prolifically in autumn.",
+      "image": "https://www.ugaoo.com/cdn/shop/articles/chrysanthemum-flowers-on-white.jpg?v=1693905827",
+      "images": [
+        "https://m.media-amazon.com/images/I/71AXCCAZ3zL._AC_UF1000,1000_QL80_.jpg",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-g-shevanti-chrysanthemum-wine-color-plant.jpg?v=1670229498",
+        "https://www.ikea.com/in/en/images/products/chrysanthemum-potted-plant-chrysanthemums-assorted-colours__0614375_pe686879_s5.jpg",
+        "https://m.media-amazon.com/images/I/61SxrcbkmSL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFTu827EJp6Jhag1hqF4RQQBtKUVNWMAAJFg&s"
+      ],
+      "stock": 1000,
+      "price": 550,
+      "market_price": 727900,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Chrysanthemum%20price"
+    },
+    {
+      "id": 50,
+      "name": "Sunflower",
+      "category": "Flowering Plants",
+      "short_description": "Massive golden-yellow blooms following the sun, tall statement plant.",
+      "image": "https://www.agiboo.com/wp-content/uploads/2017/09/thanuj-mathew-8CSTVoDMEXg-unsplash.jpg",
+      "images": [
+        "https://creativefarmer.in/cdn/shop/products/23554_1024x1024_a26c0d9c-9a75-4edc-b0c6-1d85c5bcf9aa.jpg?v=1616308984",
+        "https://manbhawannursery.in/cdn/shop/files/Sunflower2.jpg?v=1763267241"
+      ],
+      "stock": 1000,
+      "price": 150
+    },
+    {
+      "id": 51,
+      "name": "Dahlia",
+      "category": "Flowering Plants",
+      "short_description": "Spectacular layered flowers with intricate petal arrangements.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIv3eLyjX7KtC-xm8x-8Z3C3ONG0PFuzIsuQ&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuJYqJFdIKxcyuNDRbLZXCbQDHZSOppL2KIw&s",
+        "https://www.sainursery.com.au/uploads/blog/1742029712_Dahlia0.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-JO5EjorJfFcCh9nDEcnoOeSVJjlVzRfNpw&s",
+        "https://gardentherapy.ca/wp-content/uploads/2021/04/dahlia-flower.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0B3GvOTElUDHuDsacNMfzQAGrLhJj1y3wnQ&s"
+      ],
+      "stock": 1000,
+      "price": 250
+    },
+    {
+      "id": 52,
+      "name": "Canna Lily",
+      "category": "Flowering Plants",
+      "short_description": "Tall plant with bold tropical foliage and large colorful flower spikes.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-RzH-V5Wvpultil4vRdwGY-JwDwRYUTvvQ&s",
+      "images": [
+        "https://www.edenbrothers.com/cdn/shop/files/canna-lily-dwarf-mix-flo-1.jpg?v=1724254290&width=675",
+        "https://upjau.in/wp-content/uploads/2024/06/CAN-BL-PK-00.webp",
+        "https://rukmini1.flixcart.com/image/1500/1500/ku4ezrk0/plant-sapling/i/z/h/no-perennial-no-live-variegated-yellow-leaves-canna-lily-plant-original-imag7bbg4xgy84dg.jpeg?q=70",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6dFR4cppvIaM6NFDzshygT3rnPj64HrWZA&s",
+        "https://plantgalleria.in/wp-content/uploads/2024/05/New-Project-2024-06-02T111828.012.jpg"
+      ],
+      "stock": 1000,
+      "price": 650
+    },
+    {
+      "id": 53,
+      "name": "Geranium",
+      "category": "Flowering Plants",
+      "short_description": "Clusters of round flowers in red, pink, or white, extremely heat-tolerant.",
+      "image": "https://plantogallery.com/cdn/shop/files/GeraniumF1MoodyMix_1200x.jpg?v=1753507715",
+      "images": [
+        "https://marshallsgarden.com/cdn/shop/files/51301099_Geranium-Eco-Friesia-Scarlet-03-FL-Ball-Colegrave-24.jpg?v=1714561071",
+        "https://m.media-amazon.com/images/I/71OyEc0iP3L._AC_UF1000,1000_QL80_.jpg",
+        "https://flowerseedsindia.com/wp-content/uploads/Geranium-Cabaret-Mix.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYT2JKeWXc4VQRSg7cEQ_5eDRMyIYaijxIUA&s",
+        "https://i.etsystatic.com/56037456/r/il/6bea53/6729552177/il_fullxfull.6729552177_90y8.jpg"
+      ],
+      "stock": 1000,
+      "price": 850,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Geranium%20price"
+    },
+    {
+      "id": 54,
+      "name": "Vinca",
+      "category": "Flowering Plants",
+      "short_description": "Glossy foliage with delicate flowers, thrives in heat and sun.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFAya6EumN7oicqPD4Jn0a2-PmRnZEeAa_3Q&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2fZy7TyrtiDMQMPIF1KVKvRo_W6SGhnKU2g&s",
+        "https://www.kisanshop.in/uploads/golden-hills-vinca-moana-white-flower-seeds.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsRfIO2hG5--zvAeJpQ1rl3Z-nXTpmhQq_qw&s",
+        "https://seedandplant.com/cdn/shop/products/VicaRosea.jpg?v=1612327198",
+        "https://seedsnpots.com/wp-content/uploads/2018/08/vinca-pacifina-blush.jpg"
+      ],
+      "stock": 1000,
+      "price": 450,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Vinca%20price"
+    },
+    {
+      "id": 55,
+      "name": "Gardenia",
+      "category": "Flowering Plants",
+      "short_description": "Pure white fragrant flowers, glossy foliage, demands proper care.",
+      "image": "https://jjideapasumaibhoomi.com/wp-content/uploads/2022/09/Gardenia.jpg",
+      "images": [
+        "https://www.thesill.com/cdn/shop/files/Frost-Proof-Gardenia-1.jpg?v=1755732835&width=1946",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc5Ll4BKHhnan99YN_H_zFko_4_dYq4DN6sg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEb1CD3jFvjcXg5O_mb12xlhTg0WA1bxMCw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYmvQqy3k0VWtcx03wYsFl7JeVwp5h4GmTQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPXyz9LBUdEdYyvi1nHUKsWhsN1r6LfB8I-A&s"
+      ],
+      "stock": 1000,
+      "price": 250,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Gardenia%20price"
+    },
+    {
+      "id": 56,
+      "name": "Portulaca",
+      "category": "Flowering Plants",
+      "short_description": "Bright rose-like flowers, succulent trailing plant, drought-resistant.",
+      "image": "https://greenshipgardenus.com/wp-content/uploads/2025/02/unnamed-157.png",
+      "images": [
+        "https://greensouq.ae/cdn/shop/files/portulaca-grandiflora-rose-moss-9cm-pot-8741165.jpg?v=1756309459&width=800",
+        "https://www.marthastewart.com/thmb/OIoNNHmSACkp8cjZN9ZOVe-fT4U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1410717327-0e543cd4cf114a9689434ad3732458ee.jpg",
+        "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-seeds-portulaca-f1-hybrid-mixed-color-flower-seeds-16969110913164_420x.jpg?v=1634204653",
+        "https://upjau.in/wp-content/uploads/2024/04/PG-PL-MX-00_01.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjx2vtfFH_ikjycjs6Yz7a8v0rYAcqtKP8zQ&s"
+      ],
+      "stock": 1000,
+      "price": 950,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Portulaca%20price"
+    },
+    {
+      "id": 57,
+      "name": "Tuberose",
+      "category": "Flowering Plants",
+      "short_description": "Intensely fragrant white flowers, used in perfumes and garlands.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZhybD-VbyMg6upY9Lq7il-CZXj0A9Qdy6iw&s",
+      "images": [
+        "https://m.media-amazon.com/images/I/61+sObo9hOL._AC_UF1000,1000_QL80_.jpg",
+        "https://www.jiomart.com/images/product/original/rvmcjxoajw/paryavaraan-tuberose-flower-bulbs-for-home-gardening-pack-of-50-bulbs-product-images-orvmcjxoajw-p606528219-0-202312050917.jpg?im=Resize=(420,420)",
+        "https://m.media-amazon.com/images/I/61CnLxz2mHL._AC_UF1000,1000_QL80_.jpg",
+        "https://www.allthatgrows.in/cdn/shop/files/Tuberosewhite.jpg?v=1685519399",
+        "https://mybageecha.com/cdn/shop/files/polianthes_tuberosa_sapphire.jpg?v=1751217097"
+      ],
+      "stock": 1000,
+      "price": 200,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Tuberose%20price"
+    },
+    {
+      "id": 58,
+      "name": "Crossandra",
+      "category": "Flowering Plants",
+      "short_description": "Orange or red flowers with delicate ruffled petals, continuous bloomer.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcR6MEEdb2J-i0yNO72xIbnvG8jJyjsUL41Q&s",
+      "images": [
+        "https://www.thespruce.com/thmb/6xLBB0TtaTGjYFkW0gQ0Lgr2jfI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/grow-crossandra-inside-1902641-2-4dc9d2f9212741db8e3ed14168382438.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNeFtggWRqB_tH1j2y111M8nTgyiwv6vaXLA&s",
+        "https://www.southernliving.com/thmb/uVy3L_qbGyCCd6OQF_RwUEvoEH4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-483069748-2000-e511755b798d4234920bd794b3cdcae7.jpg",
+        "https://www.saharanpurnursery.in/cdn/shop/files/crossandra_700x700.jpg?v=1718611137",
+        "https://www.bhg.com/thmb/92G1PjwO7FZqEHjo5ZrtXw1Y_Ig=/1280x0/filters:no_upscale():strip_icc()/crossandra-orange-marmalade-7e4aa645-45be96f09f2a48aa95573ca0c4848cef.jpg"
+      ],
+      "stock": 1000,
+      "price": 1000,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Crossandra%20price"
+    },
+    {
+      "id": 59,
+      "name": "Lily",
+      "category": "Flowering Plants",
+      "short_description": "Large trumpet-shaped fragrant flowers in white, pink, orange, or yellow.",
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-crinum-lily-spider-lilly-plant.jpg?v=1634217002",
+      "images": [
+        "https://westmountflorist.com/cdn/shop/articles/wf-flower-reference-guide-lily.jpg?v=1697056484&width=2048",
+        "https://thursd.com/storage/media/83474/Lily-Beverly-Dreams-by-mypetyard.jpg?1739291028107",
+        "https://www.gardendesign.com/pictures/images/675x529Max/site_3/asiatic-lily-cappuccino-lily-creative-commons_11653.jpg",
+        "https://www.allthatgrows.in/cdn/shop/files/AsiaticLily-White.jpg?v=1695283993",
+        "https://www.extension.iastate.edu/news/files/eo-news/images/asiaticlilies_adobestock_225777932.jpg"
+      ],
+      "stock": 1000,
+      "price": 800,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Lily%20price"
+    },
+    {
+      "id": 60,
+      "name": "Tulip",
+      "category": "Flowering Plants",
+      "short_description": "Cup-shaped spring flowers in vibrant colors, classic garden favorite.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOhr0DBi5FK22dXHAEYYWL3ed9lHacBnAZ-g&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTNcZjeYVP8QELw-v3EIJkVOqX71wo9282Dg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4XYPrCK29rlfUw5CiNpLW37DVIVKtbuWuDA&s",
+        "https://radhakrishnaagriculture.in/cdn/shop/files/tulippink.jpg?v=1709535397&width=533",
+        "https://www.gardenersdream.co.uk/cdn/shop/files/02_GardenersDream_Bulbs_TulipBurgundy.jpg?v=1752843888&width=1946",
+        "https://organicbazar.net/cdn/shop/files/Tulip_Mixed_Color_Flower_Bulbs.jpg?v=1759924010&width=1445"
+      ],
+      "stock": 1000,
+      "price": 900,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Tulip%20price"
+    },
+    {
+      "id": 61,
+      "name": "Gerbera",
+      "category": "Flowering Plants",
+      "short_description": "Large daisy-like flowers with bright colors, long-lasting cut flower.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjkfMXhemKjqyOfC9ybX2dCaOeYxZvFqCSIA&s",
+      "images": [
+        "https://plantparadise.in/cdn/shop/files/gerbera-daisy-gerbera-flower-bou.png?v=1691200572&width=1445",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-plants-gerbera-red-plant-16968877113484.jpg?v=1634220246",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaGfVpVJkNdfuVEcBBvkYgCaRv2WIzCcT_KQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZcMyUswnn1J9RAAPEUg03f0YhVEWq4Fd9XQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhbekuJJD161Mb5zZ5wmHnK85tOIy1972kw&s"
+      ],
+      "stock": 1000,
+      "price": 100,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Gerbera%20price"
+    },
+    {
+      "id": 62,
+      "name": "Lotus",
+      "category": "Flowering Plants",
+      "short_description": "Sacred aquatic flower rising above water, symbol of purity.",
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/eb/bd/20/photo7jpg.jpg?w=900&h=500&s=1",
+      "images": [
+        "https://m.media-amazon.com/images/I/51+rS5qq-0L._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaeTDSRbIvTca8tB-5q9mKlJehL-9UPV_Kow&s",
+        "https://www.saharanpurnursery.in/cdn/shop/files/Pink-Lotus-Flower-Meaning_700x700.jpg?v=1718611176",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZDcVuXI2TWBe3GlWPbHtp30iUm8szkZjSKA&s",
+        "https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/132627/299611/prints%2Fdownscaled%2Fp_yzgsdtaut5h_2000x2000__38841.1734984505.jpg?c=2&imbypass=on"
+      ],
+      "stock": 1000,
+      "price": 1000,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Lotus%20price"
+    },
+    {
+      "id": 63,
+      "name": "Adenium",
+      "category": "Flowering Plants",
+      "short_description": "Desert rose with pink-red flowers and thick succulent stem.",
+      "image": "https://nurserylive.com/cdn/shop/products/nurserylive-adenium-obesum-plant.jpg?v=1634211524",
+      "images": [
+        "https://m.media-amazon.com/images/I/61fPmK8ADwL._AC_UF1000,1000_QL80_.jpg",
+        "https://nurserylive.com/cdn/shop/products/nurserylive-plants-adenium-plant-desert-rose-pink-plant-16968550383756.jpg?v=1634211571",
+        "https://upjau.in/wp-content/uploads/2025/02/Adenium_Multi_6-Color.webp",
+        "https://royalsplant.com/wp-content/uploads/2024/03/Adenium-7-700x699.jpg",
+        "https://lalitenterprise.com/cdn/shop/files/Untitleddesign-2024-06-29T185656.477.webp?v=1719667691"
+      ],
+      "stock": 1000,
+      "price": 350,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Adenium%20price"
+    },
+    {
+      "id": 64,
+      "name": "Magnolia",
+      "category": "Flowering Plants",
+      "short_description": "Large purple or white fragrant flowers, deciduous tree.",
+      "image": "https://cdn.britannica.com/35/92035-050-7246A31E/Magnolia.jpg",
+      "images": [
+        "https://florastore.com/cdn/shop/files/2520306_Atmosphere_02_SQ_MJ.jpg?v=1764598821&width=1080",
+        "https://m.media-amazon.com/images/I/61ayh30Ce1L._AC_UF1000,1000_QL80_.jpg",
+        "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:400,cw:2400,ch:1800,q:80,w:2400/2UtueeRUWKAqFjJyAJBvRW.jpg",
+        "https://m.media-amazon.com/images/I/41vCIVknOzL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoPCFX-n135pHYvDYTGO_RB-FPQNK2-JYqGw&s"
+      ],
+      "stock": 1000,
+      "price": 850,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Magnolia%20price"
+    },
+    {
+      "id": 65,
+      "name": "Oleander",
+      "category": "Flowering Plants",
+      "short_description": "Clustered flowers in pink, white, or red, heat and drought-tolerant.",
+      "image": "https://theaffordableorganicstore.com/cdn/shop/files/Products-18.jpg?v=1744630236",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJkGiZ2dF9PigVk6LPC1-RBPKM9PddGMPIlQ&s",
+        "https://cdn.mos.cms.futurecdn.net/ZqetTXzPT7cKa5kCXMegme.jpg",
+        "https://gabbarfarms.com/cdn/shop/products/thevetia-peruviana-Yellow_Oleander_2048x.jpg?v=1641133623",
+        "https://www.hugaplant.com/cdn/shop/files/MAIN_7ab5765e-f869-458d-91f0-bfc038b9bea1.png?v=1703925646",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAj9uvpv4EbGnFvHbJLANQkF52eAVW8I2hOw&s"
+      ],
+      "stock": 1000,
+      "price": 1000,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Oleander%20price"
+    },
+    {
+      "id": 66,
+      "name": "Mango",
+      "category": "Fruit Plants",
+      "short_description": "King of fruits with sweet juicy pulp, tropical favorite.",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/4/409093587/VC/OE/YX/163989684/yellow-mango.jpeg",
+      "images": [
+        "https://dukaan.b-cdn.net/700x700/webp/media/7a3dd1e3-5022-471e-a789-723b6274580d.jpg",
+        "https://cdn.dotpe.in/longtail/store-items/7694466/J9jHQtfN.webp",
+        "https://www.jiomart.com/images/product/original/rvsmvfyemu/cloud-farm-all-time-mango-plant-thailand-alltime-baramasi-mango-plant-grafted-plant-cf_1005-product-images-orvsmvfyemu-p603032621-0-202307101918.jpg?im=Resize=(1000,1000)",
+        "https://img500.exportersindia.com/product_images/bc-500/2022/6/9947596/sapota-plant-1654026487-6227083.jpg",
+        "https://paudhshala.com/media/catalog/product/cache/f03ee00e3d1b831739fbff170792a9d5/b/u/buy-dusheri-mango-plant.png"
+      ],
+      "stock": 1000,
+      "price": 200,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Mango%20price"
+    },
+    {
+      "id": 67,
+      "name": "Banana",
+      "category": "Fruit Plants",
+      "short_description": "Creamy yellow fruits, fast-growing plant with large leaves.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG7ElBNPs-HbYJJOMHRu7lEmphTn8-52FYKw&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6RT-2304KflxgbST0Zxk0e_F7JLSQ-abXQ&s",
+        "https://leafy-life.com/wp-content/uploads/2020/12/4MUDCRS35.png",
+        "https://5.imimg.com/data5/CX/RW/MY-43526783/red-banana-plant-500x500.jpg",
+        "https://m.media-amazon.com/images/I/51l9rTzjhEL._AC_UF1000,1000_QL80_.jpg",
+        "https://cdn.britannica.com/92/13192-050-6644F8C3/bananas-bunch.jpg"
+      ],
+      "stock": 1000,
+      "price": 300,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Banana%20price"
+    },
+    {
+      "id": 68,
+      "name": "Guava",
+      "category": "Fruit Plants",
+      "short_description": "Vitamin C-rich fruit with pink flesh, compact shrub.",
+      "image": "https://www.chandigarhayurvedcentre.com/wp-content/uploads/2024/05/guava-plants.jpg",
+      "images": [
+        "https://plantsguru.com/cdn/shop/files/GUAVA-l49.jpg?v=1739964489&width=1500",
+        "https://plantaeroot.com/wp-content/uploads/2025/09/Untitled-design-78.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToM_0EBhfpvxtSgG8q98oLYm-GPZlV3lepJQ&s",
+        "https://bangaloreagrico.in/wp-content/uploads/2016/03/guava-menta-suuco-recipe-scaled.jpg",
+        "https://agroalive.com/wp-content/uploads/2025/09/71aij33yPKL._SL1024_.jpg"
+      ],
+      "stock": 1000,
+      "price": 300,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Guava%20price"
+    },
+    {
+      "id": 69,
+      "name": "Papaya",
+      "category": "Fruit Plants",
+      "short_description": "Orange flesh fruit with medicinal properties, fast-growing.",
+      "image": "https://www.mysorefruits.com/images/fruits/papaya.png",
+      "images": [
+        "https://www.mysorefruits.com/images/fruits/papaya.png",
+        "https://www.mysorefruits.com/images/fruits/papaya.png",
+        "https://www.mysorefruits.com/images/fruits/papaya.png",
+        "https://www.mysorefruits.com/images/fruits/papaya.png",
+        "https://www.mysorefruits.com/images/fruits/papaya.png"
+      ],
+      "stock": 1000,
+      "price": 600,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Papaya%20price"
+    },
+    {
+      "id": 70,
+      "name": "Pomegranate",
+      "category": "Fruit Plants",
+      "short_description": "Juicy red arils in leathery fruit, ornamental flowering.",
+      "image": "https://plantsguru.com/cdn/shop/files/Ripe-Pomegranate-Fruit-on-Tree-Branch.jpg?v=1755687567",
+      "images": [
+        "https://greenparadiselive.com/cdn/shop/products/MiniPomegranate.jpg?v=1617710257&width=1920",
+        "https://plantsguru.com/cdn/shop/files/pg-ornamental-pomegranate.jpg?v=1735618362",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9u-EmL7t8od-g7WxwJivz63s5qte75vFi9w&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDxt_cX6yqiBj3NONKPNk27BKiVH_XdXbXaQ&s",
+        "https://vgrgardens.com/wp-content/uploads/2023/09/pomegranate-fruits-online-e1693676254334.jpg"
+      ],
+      "stock": 1000,
+      "price": 900,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Pomegranate%20price"
+    },
+    {
+      "id": 71,
+      "name": "Lemon",
+      "category": "Fruit Plants",
+      "short_description": "Sour yellow citrus fruit, compact tree, constant flowering.",
+      "image": "https://www.kisanshop.in/uploads/all-time-kagzi-lemon-fruit-plant.webp",
+      "images": [
+        "https://greenlandnurserychennai.com/wp-content/uploads/2020/08/lemon_grafted_400_fn_DhAKy.jpg",
+        "https://mybageecha.com/cdn/shop/products/Kagzi_lime_Citrus_aurantiifolia_-_Swingle_1024x.jpg?v=1571438589",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2NKVUqOfZwkGU-ooQl5qFSMC8BQZHEnFD0w&s",
+        "https://dukaan.b-cdn.net/700x700/webp/730950/570a0a01-8039-4174-b518-9bf54edfe5fb/lemon1-5f4c692d-2838-41ca-a95e-4453045affd0.png",
+        "https://hasiruagro.com/wp-content/uploads/2023/07/Lemon-Tree-All-Season-Kagzi-Hasiruagro.webp"
+      ],
+      "stock": 1000,
+      "price": 350,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Lemon%20price"
+    },
+    {
+      "id": 72,
+      "name": "Orange",
+      "category": "Fruit Plants",
+      "short_description": "Juicy orange citrus fruit, evergreen tree with fragrant flowers.",
+      "image": "https://m.media-amazon.com/images/I/71U8D+k3fkL._AC_UF1000,1000_QL80_.jpg",
+      "images": [
+        "https://mybageecha.com/cdn/shop/products/Phil_Tropic_Sunrise-1.JPG?v=1751105990",
+        "https://growcerys.com/cdn/shop/files/IMG-20241119-WA0021.jpg?v=1732864406&width=1445",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxOzSCc3vLDCHIxXjGzV7taRy13QohgmBFKQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZQZQY_TtiWGHEKYp01SzMwVlaCtul7HWZQ&s",
+        "https://m.media-amazon.com/images/I/71SQd9T+QVL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 750,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Orange%20price"
+    },
+    {
+      "id": 73,
+      "name": "Sapota",
+      "category": "Fruit Plants",
+      "short_description": "Sweet brown fruit, South Asian favorite, hardy tree.",
+      "image": "https://m.media-amazon.com/images/I/51SOzka7AvL._AC_UF1000,1000_QL80_.jpg",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjEaREXVbV6vl8VE9Pqfk0VDJ8A1pEsGdYVg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThOl6unYm0S887XBTdDm76jpGdA6sVGpH1UA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5cd-vrnzLOCNjWCba0dUtrakK5gv2naufng&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoDyu5Jmp9RqrRazpUHaPornF_jNtjOwKrRw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFYO1GGsZDUig9bDJBGJoqzA-ypCRUeUaZg&s"
+      ],
+      "stock": 1000,
+      "price": 100,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Sapota%20price"
+    },
+    {
+      "id": 74,
+      "name": "Custard Apple",
+      "category": "Fruit Plants",
+      "short_description": "Creamy white flesh fruit, heart-shaped with bumpy skin.",
+      "image": "https://cdn.britannica.com/95/126995-050-101B8B8D/Sweetsop.jpg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2020/9/EB/KV/KE/79310723/golden-custard-apple-nursery-plant.jpg",
+        "https://5.imimg.com/data5/AS/ND/VS/ANDROID-92027894/img20190817183641-jpg-500x500.jpg",
+        "https://www.della.in/wp-content/uploads/2024/07/Della-Nursery-Fruit-Trees-Custard-Apple-1.jpg",
+        "https://greenparadiselive.com/cdn/shop/files/Custard_apple.png?v=1729234662&width=1920",
+        "https://nurserynisarga.in/wp-content/uploads/2025/11/How-to-Use-35.png"
+      ],
+      "stock": 1000,
+      "price": 250,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Custard%20Apple%20price"
+    },
+    {
+      "id": 75,
+      "name": "Jamun",
+      "category": "Fruit Plants",
+      "short_description": "Dark purple berries with medicinal properties, Indian native.",
+      "image": "https://www.khethari.com/cdn/shop/articles/Jamun_Trees.jpg?v=1720440246",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2022/9/SU/RL/HI/123000844/new-product.jpeg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5H41pTr67x8lLQnlOLXzyxng8tG5HsCeP2g&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqGDV2UEkiOpCKvQx2eQ49dDQra8d_vFlSg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf1c84slEaFHxaHa8l90L7md2J4P8ZNsci5Q&s",
+        "https://m.media-amazon.com/images/I/51BOnr7jLbL._AC_UF1000,1000_QL80_.jpg"
+      ],
+      "stock": 1000,
+      "price": 450,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Jamun%20price"
+    },
+    {
+      "id": 76,
+      "name": "Coconut",
+      "category": "Fruit Plants",
+      "short_description": "Tropical nut with water and flesh, tall palm tree.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ82_OoST1lP-lmi-j7XleRQz5YJIWUKXnF5w&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVKm_ffhZ2GjWtufdh9I_stXfxUFTToEgyIw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShGEsB_-aq4lIFwP-M8qjxClqucd1z404o7Q&s",
+        "https://dms.mydukaan.io/original/jpeg/download-and-upload/86e37a2e-123f-470a-b752-761f2cd55bbf.jpeg",
+        "https://5.imimg.com/data5/ANDROID/Default/2023/7/326578092/RM/GA/ZF/128741118/product-jpeg-500x500.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLTGIG4Cf2gfWSw44M1QKYAn9ln0uI00OkXQ&s"
+      ],
+      "stock": 1000,
+      "price": 250,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Coconut%20price"
+    },
+    {
+      "id": 77,
+      "name": "Avocado",
+      "category": "Fruit Plants",
+      "short_description": "Creamy green fruit, nutrient-rich superfood, evergreen tree.",
+      "image": "https://plantsguru.com/cdn/shop/files/pg-avocado-grafted.jpg?v=1739982250",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqfbaRViEYXYxM9jQf2tgLEH0bQTjyIWA-Jg&s",
+        "https://paudhshala.com/media/catalog/product/cache/cddf5fb8ab734d8b46ea9aa1099e7b62/a/v/avocado-plant-for-sale.jpg",
+        "https://greenparadiselive.com/cdn/shop/products/Avacadoplant4.jpg?v=1655006841&width=1920",
+        "https://nationwideplants.com/cdn/shop/files/poncho-avocado-2-square.jpg?v=1736445422&width=1214",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSua1oRRQJaucGRlwzZS0fgKDZaHaL4ivZ9JQ&s"
+      ],
+      "stock": 1000,
+      "price": 900,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Avocado%20price"
+    },
+    {
+      "id": 78,
+      "name": "Plum",
+      "category": "Fruit Plants",
+      "short_description": "Purple or yellow stone fruit, deciduous tree.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxLx9xkf_g9VjYjv1mvPBa2FWG9kIuLmPtQ&s",
+      "images": [
+        "https://veliyathgarden.com/cdn/shop/products/Layer9copy_1445x.jpg?v=1656588264",
+        "https://m.media-amazon.com/images/I/51RgQZ0QWnL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsX8XzrvQMbgc97N9g3UzRBMginbUBynMSnQ&s",
+        "https://www.tnnursery.net/cdn/shop/articles/fae2dfef690eb97de413155ab20fc21c_18c662f1-3004-491b-97cb-79d40e20c364.jpg?v=1771619629",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ozFpyE-t8UJ5WXbldFZrgowyM0gxvhWvYA&s"
+      ],
+      "stock": 1000,
+      "price": 900,
+      "market_price": 9300,
+      "market_price_source": "https://html.duckduckgo.com/html/?q=Plum%20price"
+    },
+    {
+      "id": 79,
+      "name": "Kiwi",
+      "category": "Fruit Plants",
+      "short_description": "Fuzzy brown fruit with green flesh, vine plant.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg/1280px-Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/61YtUUJqmDL.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHjI1Z-MHtS9_3v-DUzO-UuOgN1BeaD6McQ&s",
+        "https://m.media-amazon.com/images/I/51cqg6LS1CL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPK4qwzK0-KmuBg8I1RxM0be4kuRFp6AHuug&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcKh1uqOdU5k7n2qrNF_vIbMQf_K-CZp31Ng&s"
+      ],
+      "stock": 1000,
+      "price": 950
+    },
+    {
+      "id": 80,
+      "name": "Bonsai",
+      "category": "Decoration Plants",
+      "short_description": "Miniature trees trained for artistic appearance, living sculpture.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8jkpVpCtmt2wyVB0XF97WA2OhCieoqwYCoQ&s",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJUAMXkiwqRy0QW_aoC1ARrvSa02KBcp3-A&s",
+        "https://royalsplant.com/wp-content/uploads/2023/10/51XnQQ1tquL._AC_UF10001000_QL80_-2.jpg",
+        "https://m.media-amazon.com/images/I/81-koMg+xIL._AC_UF1000,1000_QL80_.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQERiwiuXSWuXFF3gGtzOl8NjMsCGnTIL7Og&s",
+        "https://assets.architecturaldigest.in/photos/686e460535f8efd6dab835f6/master/w_1600%2Cc_limit/GettyImages-88956419.jpg"
+      ],
+      "stock": 1000,
+      "price": 900
+    },
+    {
+      "id": 81,
+      "name": "Succulents",
+      "category": "Decoration Plants",
+      "short_description": "Fleshy-leaved plants in various shapes, highly decorative.",
+      "image": "https://www.hoselink.com.au/cdn/shop/articles/AdobeStock_186539112_520x500_2f07b58a-60cb-4394-9238-153cfde690f6.png?v=1734567487",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ2769w7HY0vwi3eF1_VrYf49dyoKU5U2kHA&s",
+        "https://images.squarespace-cdn.com/content/v1/61f8a6516a1ef71229b452a0/3439d2c6-303e-4d83-bd7a-332b2c531cba/5cb6c-image-asset.jpeg",
+        "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/360x360/products/1499/31229/easy_indoor_20_1__26871.1748553207.jpg?c=3",
+        "https://hips.hearstapps.com/hmg-prod/images/types-of-succulents-1670514934.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1DglKWFQwI1lWIebgkZlZ85JwAPaoLCIPxw&s"
+      ],
+      "stock": 1000,
+      "price": 1000
+    },
+    {
+      "id": 82,
+      "name": "Cactus",
+      "category": "Decoration Plants",
+      "short_description": "Spiny desert plants with geometric forms, minimal water needs.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAF8ceDB4JjjWT3rO3d83Ef6GZdN8rOp5IzA&s",
+      "images": [
+        "https://images.unsplash.com/photo-1694536883401-f5765adfd626?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8",
+        "https://i.ytimg.com/vi/YoJa8TDCMj8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBp3QD-wfogcypW1GIHmYxCrpQNUw",
+        "https://www.moonvalleynurseries.com/_next/image?url=https%3A%2F%2Fcdn.mvncorp.dev%2Fmedia%2Fproducts%2Fimages%2FArgentine%20Giant%20-%20Echinopsis%20candicans%202.jpg&w=3840&q=50",
+        "https://www.juneflowers.com/wp-content/uploads/2022/08/Cactus-Plant.jpg",
+        "https://plantorbit.com/cdn/shop/files/m_13_3.webp?v=1770024298&width=533"
+      ],
+      "stock": 1000,
+      "price": 450
+    },
+    {
+      "id": 83,
+      "name": "Ficus",
+      "category": "Decoration Plants",
+      "short_description": "Glossy-leaved shrub growing into tree form.",
+      "image": "https://nurserynisarga.in/wp-content/uploads/2025/03/Rose-Rosa-Charisma-Plant-6.webp",
+      "images": [
+        "https://nurserynisarga.in/wp-content/uploads/2025/03/Rose-Rosa-Charisma-Plant.webp",
+        "https://unlimitedgreens.com/cdn/shop/files/Bonsai15B.jpg?v=1714810744",
+        "https://imgcdn.floweraura.com/IMG_9478.jpg",
+        "https://exoticflora.in/cdn/shop/products/exoticfloraficusbenjaminanatureboyimage_45364584-7428-4714-995a-7e9a90e66469_1024x1024.jpg?v=1620339246",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMYN711qowv9Tvcco6DpLHpVwd6s1jEAXE3Q&s"
+      ],
+      "stock": 1000,
+      "price": 200
+    },
+    {
+      "id": 84,
+      "name": "Haworthia",
+      "category": "Decoration Plants",
+      "short_description": "Compact succulent with triangular leaves.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gaIyNrafGd0ul3MKhreeiS00NQjk-UDiIA&s",
+      "images": [
+        "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/4845/30481/haworthia-6-2__47754.1740544102.jpg?c=3",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjMfdeYCEQIpyMoCN9vK-2BEPMVSufNtBQQg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbotfAzLYDIGUlVnukAawN7-8uGRcgMPpS3A&s",
+        "https://dreamgreen.in/cdn/shop/collections/image_6d9bbf57-d243-4b76-8b95-6efaaaa18026.heic?v=1698926469&width=750",
+        "https://nurserynisarga.in/wp-content/uploads/2021/01/IMG_2517.jpg"
+      ],
+      "stock": 1000,
+      "price": 300
+    }
+  ]
+}

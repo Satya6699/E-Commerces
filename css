@@ -1,0 +1,139 @@
+/* --- Sri Lavanya Nursery - Main Stylesheet --- */
+/* Comprehensive styling for all pages */
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== CART SIDEBAR ===== */
+#cart-sidebar {
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+#cart-count {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== PLANT CARD LINK ===== */
+.plant-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.plant-card-link:hover .plant-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== PLANT CARD STYLES ===== */
+.plant-card {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+}
+
+.plant-card img {
+    transition: transform 0.3s ease;
+}
+
+.plant-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Stagger animation delays */
+.plant-card:nth-child(1) { animation-delay: 0s; }
+.plant-card:nth-child(2) { animation-delay: 0.05s; }
+.plant-card:nth-child(3) { animation-delay: 0.1s; }
+.plant-card:nth-child(4) { animation-delay: 0.15s; }
+.plant-card:nth-child(5) { animation-delay: 0.2s; }
+.plant-card:nth-child(n+6) { animation-delay: 0.25s; }
+
+/* ===== FILTER BUTTONS ===== */
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: #15803d;
+    color: white;
+    border-color: #15803d;
+}
+
+.filter-btn:hover {
+    background-color: #15803d;
+    color: white;
+}
+
+/* ===== PRODUCT DETAIL PAGE ===== */
+.size-option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.size-option:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: #15803d !important;
+}
+
+.size-option.selected {
+    background-color: #dcfce7 !important;
+    border-color: #15803d !important;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.2);
+}
+
+.size-option.selected p {
+    color: #15803d;
+}
+
+#plant-image {
+    max-height: 500px;
+    width: 100%;
+}
+
+#order-btn:disabled,
+#order-btn-cart:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#order-btn:not(:disabled):hover,
+#order-btn-cart:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    #plant-image {
+        max-height: 300px;
+    }
+
+    #cart-sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .plant-card {
+        margin: 0 auto;
+    }
+}

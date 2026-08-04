@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lavanya Nursery | Order via WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <!-- enable backend features -->
+    <!-- API_BASE should match the server port; using origin avoids hardcoding. -->
+    <script>
+        window.hasBackend = true;
+        window.API_BASE = window.API_BASE || (window.location.origin && window.location.origin !== 'null' ? window.location.origin : 'http://localhost:3000');
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="site-nav bg-white/90 border-b border-green-100 sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center gap-4">
+            <a href="#home" class="brand-lockup text-green-900 tracking-tight">
+                <span class="brand-mark"><i class="fas fa-leaf"></i></span>
+                <span>
+                    <span class="block text-base sm:text-xl font-extrabold leading-tight">Sri Lavanya Nursery</span>
+                    <span class="hidden sm:block text-xs font-semibold text-green-700">Fresh plants, simple ordering</span>
+                </span>
+            </a>
+            <div class="hidden md:flex nav-links items-center">
+                <a href="#home">Home</a>
+                <a href="#shop">Plants</a>
+                <a href="track-order.html"><i class="fas fa-box mr-1"></i>Track Order</a>
+                <a href="admin.html">Admin</a>
+                <a href="https://wa.me/8466899624" target="_blank" class="primary-action px-5 py-2 flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i> Chat with Us
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="login-button" type="button" onclick="window.location.href='login.html'" aria-label="Login" class="text-green-800 hover:text-green-900 inline-flex items-center gap-1">
+                    <i class="fas fa-user"></i><span>Login</span>
+                </button>
+                <button id="profile-button" type="button" onclick="openProfileModal()" aria-label="Open profile" class="hidden text-green-800 hover:text-green-900 inline-flex items-center gap-1">
+                    <i class="fas fa-user"></i><span id="profile-label">Profile</span>
+                </button>
+                <button type="button" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false" class="mobile-menu-toggle md:hidden">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t border-green-100 bg-white">
+            <a href="#home" onclick="closeMobileMenu()">Home</a>
+            <a href="#shop" onclick="closeMobileMenu()">Plants</a>
+            <a href="track-order.html">Track Order</a>
+            <button id="mobile-login-button" type="button" onclick="window.location.href='login.html'; closeMobileMenu();" class="w-full text-left px-4 py-3 text-green-700 hover:bg-green-50 rounded">Login</button>
+            <button id="mobile-profile-button" type="button" onclick="openProfileModal(); closeMobileMenu();" class="hidden w-full text-left px-4 py-3 text-green-700 hover:bg-green-50 rounded">Profile</button>
+            <a href="admin.html">Admin</a>
+            <a href="https://wa.me/8466899624" target="_blank" class="mobile-whatsapp"><i class="fab fa-whatsapp mr-2"></i>Chat with Us</a>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart-sidebar" aria-label="Shopping cart" class="fixed right-0 top-0 h-full w-96 max-w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 overflow-y-auto">
+        <div class="p-6 bg-green-700 text-white flex justify-between items-center sticky top-0">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-green-100">Checkout</p>
+                <h2 class="text-xl font-bold">Your Cart</h2>
+            </div>
+            <button type="button" onclick="toggleCart()" aria-label="Close cart" class="text-2xl hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="p-6">
+            <p class="text-gray-500 text-center py-8">Your cart is empty</p>
+        </div>
+        <div class="border-t p-6 sticky bottom-0 bg-white space-y-3">
+            <div>
+                <label for="order-comment" class="block text-sm font-semibold text-gray-700 mb-2">Additional order notes</label>
+                <textarea id="order-comment" rows="3" class="w-full resize-none rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-green-500 focus:outline-none" placeholder="Describe what you want about the product, preferences, or any instructions."></textarea>
+            </div>
+            <button type="button" onclick="createCheckout()" id="checkout-btn-cart" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition flex items-center justify-center gap-2 disabled:opacity-50" disabled>
+                <i class="fas fa-credit-card"></i> Checkout (Pay)
+            </button>
+            <button type="button" onclick="orderFromCart()" id="order-btn-cart" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition flex items-center justify-center gap-2 disabled:opacity-50" disabled>
+                <i class="fab fa-whatsapp"></i> Order Now (WhatsApp)
+            </button>
+        </div>
+    </aside>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black opacity-50 z-30 hidden" onclick="toggleCart()"></div>
+
+    <button id="floating-wishlist-button" type="button" onclick="toggleWishlistSidebar()" aria-label="Open wishlist" class="fixed bottom-24 right-6 z-40 bg-pink-600 text-white rounded-full w-16 h-16 shadow-2xl flex items-center justify-center border border-pink-700 hover:bg-pink-700 transition">
+        <i class="fas fa-heart text-lg"></i>
+        <span id="wishlist-count" class="absolute -top-2 -right-2 bg-white text-pink-600 text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold hidden">0</span>
+    </button>
+    <button id="floating-cart-button" type="button" onclick="toggleCart()" aria-label="Open cart" class="cart-button fixed bottom-6 right-6 z-40 bg-green-700 text-white rounded-full w-16 h-16 shadow-2xl flex items-center justify-center hover:bg-green-800 transition">
+        <i class="fas fa-shopping-cart text-lg"></i>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold hidden">0</span>
+    </button>
+    <aside id="wishlist-sidebar" aria-label="Wishlist" class="fixed right-0 top-0 h-full w-96 max-w-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 overflow-y-auto z-50">
+        <div class="p-6 bg-pink-600 text-white flex justify-between items-center sticky top-0">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-pink-100">Wishlist</p>
+                <h2 class="text-xl font-bold">Your Wishlist</h2>
+            </div>
+            <button type="button" onclick="toggleWishlistSidebar()" aria-label="Close wishlist" class="text-2xl hover:text-pink-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="wishlist-items" class="p-6">
+            <p class="text-gray-500 text-center py-8">Your wishlist is empty</p>
+        </div>
+    </aside>
+    <div id="wishlist-overlay" class="fixed inset-0 bg-black opacity-50 z-30 hidden" onclick="toggleWishlistSidebar()"></div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-6 right-6 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hidden z-50 flex items-center gap-2 animate-pulse" style="animation: slideIn 0.3s ease;">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Added to cart!</span>
+    </div>
+
+    <section id="home" class="hero-section relative flex items-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=1470');">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="hero-panel text-white py-16">
+                <span class="brand-pill mb-5"><i class="fas fa-leaf"></i> Fresh nursery plants</span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-5 leading-tight">Sri Lavanya Nursery</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl text-green-50">Healthy indoor, outdoor, flowering, fruit, and decoration plants delivered with simple WhatsApp ordering.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#shop" class="primary-action px-6 py-3 inline-flex items-center gap-2">
+                        Shop Plants <i class="fas fa-arrow-down text-sm"></i>
+                    </a>
+                    <a href="track-order.html" class="secondary-action px-6 py-3 inline-flex items-center gap-2">
+                        Track Order <i class="fas fa-box text-sm"></i>
+                    </a>
+                </div>
+                <div class="hero-highlights mt-8">
+                    <div><strong>100+</strong><span>Plant varieties</span></div>
+                    <div><strong>Fresh</strong><span>Nursery picked</span></div>
+                    <div><strong>Easy</strong><span>WhatsApp orders</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-14 md:py-16 container mx-auto px-4 sm:px-6">
+        <!-- Back to Categories button removed -->
+
+        <div class="text-center mb-8">
+            <p class="section-kicker mb-2">Browse the nursery</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-green-900">Choose Your Plant</h2>
+            <p class="text-gray-600 mt-3">Search by name or filter by category to find the right plant faster.</p>
+        </div>
+        
+        <div class="shop-toolbar">
+            <!-- Search Box -->
+            <div class="max-w-xl mx-auto w-full">
+                <label for="search-input" class="sr-only">Search plants by name or care description</label>
+                <div class="search-wrap relative bg-white rounded-2xl border border-green-100">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search plants by name or care need..." 
+                        onkeyup="searchPlants(this.value)"
+                        class="w-full px-5 py-3 pr-12 border-0 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-600 transition"
+                    >
+                    <i class="fas fa-search absolute right-5 top-4 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <div class="filter-row" aria-label="Plant categories">
+                <button type="button" onclick="filterPlants('all')" class="filter-btn active border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-all">All</button>
+                <button type="button" onclick="filterPlants('indoor')" class="filter-btn border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-indoor">Indoor</button>
+                <button type="button" onclick="filterPlants('outdoor')" class="filter-btn border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-outdoor">Outdoor</button>
+                <button type="button" onclick="filterPlants('flowering')" class="filter-btn border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-flowering">Flowering</button>
+                <button type="button" onclick="filterPlants('fruits')" class="filter-btn border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-fruits">Fruits</button>
+                <button type="button" onclick="filterPlants('decoration')" class="filter-btn border-2 border-green-700 px-5 py-2 rounded-full font-semibold transition" id="btn-decoration">Decoration</button>
+            </div>
+        </div>
+
+        <div id="plant-grid" aria-live="polite" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <div class="col-span-full loading-state">
+                <i class="fas fa-seedling"></i>
+                <p>Loading fresh plants...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured/Best Sellers Section -->
+    <section class="py-14 md:py-16 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <p class="section-kicker mb-2">Customer Favorites</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-900">Featured & Best Sellers</h2>
+                <p class="text-gray-600 mt-3">Plants loved by our community</p>
+            </div>
+            <div id="featured-carousel" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-14 md:py-16 container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+            <p class="section-kicker mb-2">Our Promise</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-green-900">Why Choose Sri Lavanya?</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-green-100 hover:shadow-lg transition text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-truck text-green-700 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Fast Delivery</h3>
+                <p class="text-gray-600 text-sm">Quick, safe packaging to keep plants healthy during transit.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-green-100 hover:shadow-lg transition text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-leaf text-green-700 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Nursery-Picked</h3>
+                <p class="text-gray-600 text-sm">Every plant hand-selected for health and quality directly from our nursery.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-green-100 hover:shadow-lg transition text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-green-700 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">30-Day Guarantee</h3>
+                <p class="text-gray-600 text-sm">Not happy? We'll replace or refund your plant within 30 days.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-green-100 hover:shadow-lg transition text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-headset text-green-700 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Expert Support</h3>
+                <p class="text-gray-600 text-sm">24/7 WhatsApp support for plant care tips and questions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Stats/Social Proof -->
+    <section class="py-14 md:py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold mb-2">500+</div>
+                    <p class="text-green-100 text-lg">Happy Customers</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">2000+</div>
+                    <p class="text-green-100 text-lg">Plants Delivered</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2">98%</div>
+                    <p class="text-green-100 text-lg">Quality Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee & Trust Section -->
+    <section class="py-14 md:py-16 bg-emerald-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <p class="section-kicker mb-2">We've Got You Covered</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-900">Our Guarantees</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border-2 border-green-200 text-center">
+                    <i class="fas fa-calendar-check text-3xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">30-Day Health Guarantee</h3>
+                    <p class="text-gray-600">If your plant doesn't thrive, we replace it free.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border-2 border-green-200 text-center">
+                    <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Free Care Guide</h3>
+                    <p class="text-gray-600">Complete watering & care instructions with every order.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border-2 border-green-200 text-center">
+                    <i class="fas fa-comments text-3xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">24/7 WhatsApp Support</h3>
+                    <p class="text-gray-600">Chat anytime for plant care advice and order support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Care Tips Section -->
+    <section class="py-14 md:py-16 container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+            <p class="section-kicker mb-2">Expert Tips</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-green-900">Plant Care Guides</h2>
+            <p class="text-gray-600 mt-3">Learn how to keep your plants thriving</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white border border-green-100 rounded-xl overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="showModal('care-modal-1')">
+                <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                    <i class="fas fa-sun text-6xl text-white opacity-30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg mb-2">5 Indoor Plants for Beginners</h3>
+                    <p class="text-gray-600 text-sm mb-4">Start your green journey with easy-to-care plants like Snake Plant, Pothos, and Spider Plant.</p>
+                    <a href="#" class="text-green-600 font-semibold text-sm flex items-center gap-2">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white border border-green-100 rounded-xl overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="showModal('care-modal-2')">
+                <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                    <i class="fas fa-droplet text-6xl text-white opacity-30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg mb-2">How to Care for Flowering Plants</h3>
+                    <p class="text-gray-600 text-sm mb-4">Watering, sunlight, and fertilizing tips to keep your flowers blooming all season long.</p>
+                    <a href="#" class="text-green-600 font-semibold text-sm flex items-center gap-2">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white border border-green-100 rounded-xl overflow-hidden hover:shadow-lg transition cursor-pointer" onclick="showModal('care-modal-3')">
+                <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                    <i class="fas fa-cloud text-6xl text-white opacity-30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg mb-2">Seasonal Plant Guide</h3>
+                    <p class="text-gray-600 text-sm mb-4">What to plant and how to adjust care routines for spring, summer, fall, and winter.</p>
+                    <a href="#" class="text-green-600 font-semibold text-sm flex items-center gap-2">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="py-14 md:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <p class="section-kicker mb-2">Our Community</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-900">What Customers Say</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-green-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=customer1" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-semibold">Priya Sharma</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The plants arrived in perfect condition. The care guide was super helpful, and my monstera is thriving! Highly recommend Sri Lavanya."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-green-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=customer2" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-semibold">Rajesh Kumar</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"WhatsApp ordering is so convenient! Got my plants delivered in 2 days. The 30-day guarantee gives me peace of mind."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-green-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=customer3" alt="Customer" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h4 class="font-semibold">Anjali Desai</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Beautiful collection! My home looks so much fresher now. The customer support helped me pick the perfect plants for my apartment."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Banner -->
+    <section class="py-12 md:py-16 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Get Plant Care Tips & Exclusive Offers</h2>
+                <p class="text-green-100 mb-6">Join our community of 500+ plant lovers and get weekly tips, seasonal guides, and special discounts.</p>
+                <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleNewsletterSignup(event)">
+                    <input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-300"
+                        required
+                    >
+                    <button type="submit" class="px-6 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-green-50 transition">Subscribe</button>
+                </form>
+                <p class="text-green-200 text-xs mt-3">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Plant Finder Quiz Section -->
+    <section class="py-14 md:py-16 container mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <p class="section-kicker mb-2">Help & Support</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-green-900">Frequently Asked Questions</h2>
+            </div>
+            
+            <!-- Plant Finder Quiz Card -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl border-2 border-green-200 mb-8 text-center">
+                <h3 class="text-2xl font-bold text-green-900 mb-3">Not Sure Which Plant to Get?</h3>
+                <p class="text-gray-600 mb-6">Take our quick 2-minute Plant Personality Quiz to find your perfect match!</p>
+                <button type="button" onclick="startPlantQuiz()" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition inline-flex items-center gap-2">
+                    <i class="fas fa-spa"></i> Start the Quiz
+                </button>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="space-y-4">
+                <div class="border border-green-200 rounded-lg">
+                    <button type="button" onclick="toggleFAQ(this)" class="w-full p-4 flex justify-between items-center hover:bg-green-50 transition font-semibold text-green-900">
+                        <span>How do I care for my plant after delivery?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden px-4 pb-4 text-gray-700 border-t border-green-200">
+                        <p>Every order includes a complete care guide specific to your plant. We also recommend adjusting light and water gradually over the first week, and contacting us on WhatsApp if you need any help.</p>
+                    </div>
+                </div>
+                <div class="border border-green-200 rounded-lg">
+                    <button type="button" onclick="toggleFAQ(this)" class="w-full p-4 flex justify-between items-center hover:bg-green-50 transition font-semibold text-green-900">
+                        <span>What if my plant arrives damaged?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden px-4 pb-4 text-gray-700 border-t border-green-200">
+                        <p>Our 30-day guarantee covers any damage or health issues. Simply send us photos on WhatsApp and we'll replace or refund your plant immediately.</p>
+                    </div>
+                </div>
+                <div class="border border-green-200 rounded-lg">
+                    <button type="button" onclick="toggleFAQ(this)" class="w-full p-4 flex justify-between items-center hover:bg-green-50 transition font-semibold text-green-900">
+                        <span>Do you deliver outside the city?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden px-4 pb-4 text-gray-700 border-t border-green-200">
+                        <p>Yes! We ship across most regions. Delivery time varies by location. Contact us on WhatsApp with your pincode and we'll provide a quote and timeline.</p>
+                    </div>
+                </div>
+                <div class="border border-green-200 rounded-lg">
+                    <button type="button" onclick="toggleFAQ(this)" class="w-full p-4 flex justify-between items-center hover:bg-green-50 transition font-semibold text-green-900">
+                        <span>Can I schedule a delivery date?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden px-4 pb-4 text-gray-700 border-t border-green-200">
+                        <p>Absolutely! When you order on WhatsApp, let us know your preferred delivery date and we'll arrange it accordingly. Most orders are delivered within 2-3 days.</p>
+                    </div>
+                </div>
+                <div class="border border-green-200 rounded-lg">
+                    <button type="button" onclick="toggleFAQ(this)" class="w-full p-4 flex justify-between items-center hover:bg-green-50 transition font-semibold text-green-900">
+                        <span>Do you offer bulk orders for offices/events?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="hidden px-4 pb-4 text-gray-700 border-t border-green-200">
+                        <p>Yes! We love corporate and event orders. Contact us on WhatsApp with your requirements and we'll provide special pricing and dedicated support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-green-900 text-white py-12 text-center">
+        <h3 class="text-2xl font-bold mb-2">Sri Lavanya Nursery</h3>
+        <p class="text-green-200 mb-6 italic">Where greenery meets life.</p>
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/918466899624" class="text-2xl hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-green-300 text-sm">&copy; 2026 Sri Lavanya Nursery. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <!-- Care Guide Modals -->
+    <div id="care-modal-1" class="care-guide-modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-screen overflow-y-auto">
+            <div class="p-6 border-b sticky top-0 bg-white flex justify-between items-start">
+                <h2 class="text-2xl font-bold text-green-900">5 Indoor Plants for Beginners</h2>
+                <button type="button" onclick="closeModal('care-modal-1')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <h3 class="font-semibold text-lg">Perfect Plants to Start Your Journey</h3>
+                <div class="space-y-3">
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-semibold">1. Pothos (Devil's Ivy)</h4>
+                        <p class="text-sm text-gray-600">Nearly impossible to kill! Tolerates low light and irregular watering. Perfect for beginners.</p>
+                    </div>
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-semibold">2. Snake Plant (Sansevieria)</h4>
+                        <p class="text-sm text-gray-600">Super hardy and air-purifying. Water once a month. Ideal for offices.</p>
+                    </div>
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-semibold">3. Spider Plant</h4>
+                        <p class="text-sm text-gray-600">Produces cute baby plants. Very forgiving and adapts to any light condition.</p>
+                    </div>
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-semibold">4. ZZ Plant</h4>
+                        <p class="text-sm text-gray-600">Glossy leaves and minimal care needed. Tolerates neglect brilliantly.</p>
+                    </div>
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <h4 class="font-semibold">5. Peace Lily</h4>
+                        <p class="text-sm text-gray-600">Beautiful white flowers. Tells you when it needs water by drooping slightly.</p>
+                    </div>
+                </div>
+                <div class="bg-green-50 p-4 rounded border border-green-200">
+                    <p class="text-sm font-semibold text-green-900 mb-2">Pro Tip: Start with 1-2 plants and master their care before adding more!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="care-modal-2" class="care-guide-modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-screen overflow-y-auto">
+            <div class="p-6 border-b sticky top-0 bg-white flex justify-between items-start">
+                <h2 class="text-2xl font-bold text-green-900">Care for Flowering Plants</h2>
+                <button type="button" onclick="closeModal('care-modal-2')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <h3 class="font-semibold text-lg">Keep Your Flowers Blooming All Season</h3>
+                <div class="space-y-3">
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-semibold">💧 Watering</h4>
+                        <p class="text-sm text-gray-600">Keep soil consistently moist but not waterlogged. Water at the base, not on flowers. Most flowers need water 2-3 times weekly.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-semibold">☀️ Sunlight</h4>
+                        <p class="text-sm text-gray-600">Most flowering plants need 6-8 hours of direct sunlight daily. Place them near windows facing south or west.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-semibold">🌱 Fertilizing</h4>
+                        <p class="text-sm text-gray-600">Use a flowering plant fertilizer every 2 weeks during blooming season. This encourages more flowers and stronger growth.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-semibold">✂️ Deadheading</h4>
+                        <p class="text-sm text-gray-600">Remove dead flowers regularly. This signals the plant to produce more blooms instead of seeds.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="font-semibold">🌡️ Temperature</h4>
+                        <p class="text-sm text-gray-600">Most flowers prefer 15-25°C. Avoid cold drafts and keep away from heating vents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="care-modal-3" class="care-guide-modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-screen overflow-y-auto">
+            <div class="p-6 border-b sticky top-0 bg-white flex justify-between items-start">
+                <h2 class="text-2xl font-bold text-green-900">Seasonal Plant Guide</h2>
+                <button type="button" onclick="closeModal('care-modal-3')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <h3 class="font-semibold text-lg">Adjust Your Care Routine by Season</h3>
+                <div class="space-y-3">
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                        <h4 class="font-semibold text-yellow-900">🌸 Spring (Mar-May)</h4>
+                        <p class="text-sm">Perfect time to repot and refresh soil. Start fertilizing. Increase watering as plants grow. Great for planting seeds.</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
+                        <h4 class="font-semibold text-orange-900">☀️ Summer (Jun-Aug)</h4>
+                        <p class="text-sm">Water more frequently (daily in heat). Provide afternoon shade to prevent leaf burn. Watch for pests. Keep humidity high.</p>
+                    </div>
+                    <div class="bg-amber-50 border-l-4 border-amber-600 p-4 rounded">
+                        <h4 class="font-semibold text-amber-900">🍂 Fall (Sep-Nov)</h4>
+                        <p class="text-sm">Gradually reduce watering. Stop fertilizing. Move tender plants indoors. Harvest vegetables and fruits. Prepare for winter.</p>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                        <h4 class="font-semibold text-blue-900">❄️ Winter (Dec-Feb)</h4>
+                        <p class="text-sm">Water sparingly (soil should dry between watering). Ensure bright light. Keep away from cold drafts. Most plants rest during this season.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plant Finder Quiz Modal -->
+    <div id="quiz-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl">
+            <div class="p-6 border-b sticky top-0 bg-white flex justify-between items-start">
+                <h2 class="text-2xl font-bold text-green-900">Plant Personality Quiz</h2>
+                <button type="button" onclick="closeModal('quiz-modal')" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6" id="quiz-content">
+                <!-- Quiz will be populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-xl shadow-xl w-11/12 md:w-2/3 lg:w-1/2 overflow-hidden">
+            <div class="p-4 flex justify-between items-start border-b">
+                <div>
+                    <h3 id="modal-plant-name" class="text-2xl font-bold"></h3>
+                    <p id="modal-plant-cat" class="text-sm text-green-600 uppercase"></p>
+                </div>
+                <button type="button" onclick="closeDetailsModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-1 flex items-center justify-center">
+                    <img id="modal-plant-image" src="" alt="Plant" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-semibold mb-2">Care & Watering</h4>
+                    <div id="modal-care-content" class="text-sm text-gray-700 bg-gray-50 p-3 rounded"></div>
+                    <div class="mt-4 flex gap-3">
+                        <a id="modal-more-link" href="#" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">View full details</a>
+                        <button type="button" onclick="addFromModalToCart()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-screen overflow-hidden flex flex-col">
+            <div class="p-4 flex justify-between items-center border-b sticky top-0 bg-white">
+                <h3 id="gallery-title" class="text-2xl font-bold text-green-700"></h3>
+                <button type="button" onclick="closeGalleryModal()" class="text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6">
+                <div id="gallery-images" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Images will be inserted here -->
+                </div>
+            </div>
+            <div class="p-4 border-t flex justify-end gap-3">
+                <button type="button" onclick="closeGalleryModal()" class="px-6 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-xl max-h-[90vh] overflow-hidden">
+            <div class="p-6 border-b border-green-100 flex justify-between items-start gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-green-500">Your Profile</p>
+                    <h2 id="profile-name" class="text-3xl font-bold text-green-900 mt-2">Customer Name</h2>
+                    <p id="profile-subtitle" class="text-sm text-gray-600 mt-1">Profile details stored locally and shown here.</p>
+                </div>
+                <button type="button" onclick="closeProfileModal()" class="text-gray-400 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-2xl border border-green-100">
+                        <p class="text-xs uppercase tracking-widest text-green-500">Name</p>
+                        <p id="profile-field-name" class="mt-2 text-lg font-semibold text-gray-900"></p>
+                        <input id="profile-input-name" class="hidden mt-3 w-full rounded-xl border border-green-200 px-3 py-2" placeholder="Enter name" />
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-2xl border border-green-100">
+                        <p class="text-xs uppercase tracking-widest text-green-500">Email</p>
+                        <p id="profile-field-email" class="mt-2 text-lg font-semibold text-gray-900"></p>
+                        <input id="profile-input-email" class="hidden mt-3 w-full rounded-xl border border-green-200 px-3 py-2 bg-gray-100 cursor-not-allowed" readonly />
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-green-50 p-4 rounded-2xl border border-green-100">
+                        <p class="text-xs uppercase tracking-widest text-green-500">Phone</p>
+                        <p id="profile-field-phone" class="mt-2 text-lg font-semibold text-gray-900"></p>
+                        <input id="profile-input-phone" class="hidden mt-3 w-full rounded-xl border border-green-200 px-3 py-2" placeholder="Enter phone" />
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-2xl border border-green-100">
+                        <p class="text-xs uppercase tracking-widest text-green-500">Member Since</p>
+                        <p id="profile-field-created" class="mt-2 text-lg font-semibold text-gray-900"></p>
+                    </div>
+                </div>
+                <div id="profile-edit-error" class="hidden text-sm text-red-600 bg-red-50 p-3 rounded-2xl border border-red-100"></div>
+                <div class="bg-white p-4 rounded-2xl border border-green-100">
+                    <p class="text-sm text-gray-600">This profile shows the current customer data stored in your browser local storage under <code class="bg-gray-100 px-2 py-1 rounded">currentCustomer</code>. Use the login page to update or sign in as a different customer.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-green-100 flex flex-wrap gap-3 justify-end bg-green-50">
+                <button id="profile-edit-button" type="button" onclick="enterProfileEditMode()" class="px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition">Edit</button>
+                <button id="profile-save-button" type="button" onclick="saveProfileChanges()" class="hidden px-5 py-3 rounded-xl bg-green-700 text-white hover:bg-green-800 transition">Save</button>
+                <button id="profile-cancel-button" type="button" onclick="cancelProfileEditMode()" class="hidden px-5 py-3 rounded-xl bg-white text-green-700 border border-green-200 hover:bg-green-100 transition">Cancel</button>
+                <button type="button" onclick="handleProfileLogout()" class="px-5 py-3 rounded-xl bg-red-600 text-white hover:bg-red-700 transition">Logout</button>
+                <button type="button" onclick="closeProfileModal()" class="px-5 py-3 rounded-xl bg-white text-green-700 border border-green-200 hover:bg-green-100 transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Files - ORGANIZED SEPARATELY -->
+    <script src="js/auth.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/plants.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/homepage.js"></script>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.querySelector('.mobile-menu-toggle');
+            if (!menu) return;
+            const isHidden = menu.classList.toggle('hidden');
+            if (button) button.setAttribute('aria-expanded', String(!isHidden));
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.querySelector('.mobile-menu-toggle');
+            if (menu) menu.classList.add('hidden');
+            if (button) button.setAttribute('aria-expanded', 'false');
+        }
+
+        // Initialize page on load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterPlants('all');
+            if (typeof updateCartUI === 'function') {
+                updateCartUI();
+            }
+            updateProfileButton();
+        });
+
+        function openProfileModal() {
+            const customer = getCurrentCustomer();
+            if (!customer) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            updateProfileDisplay(customer);
+            exitProfileEditMode();
+            document.getElementById('profile-modal').classList.remove('hidden');
+        }
+
+        function updateProfileDisplay(customer) {
+            document.getElementById('profile-name').textContent = customer.name || 'Customer';
+            document.getElementById('profile-field-name').textContent = customer.name || 'Not available';
+            document.getElementById('profile-field-email').textContent = customer.email || 'Not available';
+            document.getElementById('profile-field-phone').textContent = customer.phone || 'Not available';
+            document.getElementById('profile-field-created').textContent = customer.created_at ? new Date(customer.created_at).toLocaleDateString('en-IN') : 'Unknown';
+            document.getElementById('profile-input-name').value = customer.name || '';
+            document.getElementById('profile-input-phone').value = customer.phone || '';
+            document.getElementById('profile-input-email').value = customer.email || '';
+            document.getElementById('profile-subtitle').textContent = 'Customer data stored in local storage and available here.';
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profile-modal').classList.add('hidden');
+            exitProfileEditMode();
+        }
+
+        function enterProfileEditMode() {
+            document.getElementById('profile-field-name').classList.add('hidden');
+            document.getElementById('profile-field-phone').classList.add('hidden');
+            document.getElementById('profile-input-name').classList.remove('hidden');
+            document.getElementById('profile-input-phone').classList.remove('hidden');
+            document.getElementById('profile-input-email').classList.remove('hidden');
+            document.getElementById('profile-edit-button').classList.add('hidden');
+            document.getElementById('profile-save-button').classList.remove('hidden');
+            document.getElementById('profile-cancel-button').classList.remove('hidden');
+            document.getElementById('profile-edit-error').classList.add('hidden');
+        }
+
+        function exitProfileEditMode() {
+            document.getElementById('profile-field-name').classList.remove('hidden');
+            document.getElementById('profile-field-phone').classList.remove('hidden');
+            document.getElementById('profile-input-name').classList.add('hidden');
+            document.getElementById('profile-input-phone').classList.add('hidden');
+            document.getElementById('profile-input-email').classList.add('hidden');
+            document.getElementById('profile-edit-button').classList.remove('hidden');
+            document.getElementById('profile-save-button').classList.add('hidden');
+            document.getElementById('profile-cancel-button').classList.add('hidden');
+            document.getElementById('profile-edit-error').classList.add('hidden');
+        }
+
+        function saveProfileChanges() {
+            const customer = getCurrentCustomer();
+            if (!customer) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const newName = document.getElementById('profile-input-name').value.trim();
+            const newPhone = document.getElementById('profile-input-phone').value.trim();
+            const errorEl = document.getElementById('profile-edit-error');
+
+            if (!newName) {
+                errorEl.textContent = 'Name cannot be empty.';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            if (!newPhone) {
+                errorEl.textContent = 'Phone number cannot be empty.';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            const updatedCustomer = updateCustomerProfile(customer.id, newName, newPhone);
+            if (!updatedCustomer) {
+                errorEl.textContent = 'Unable to save profile changes. Please try again.';
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            updateProfileDisplay(updatedCustomer);
+            updateProfileButton();
+            exitProfileEditMode();
+            errorEl.classList.add('hidden');
+        }
+
+        function cancelProfileEditMode() {
+            const customer = getCurrentCustomer();
+            if (customer) {
+                updateProfileDisplay(customer);
+            }
+            exitProfileEditMode();
+        }
+
+        function updateProfileButton() {
+            const customer = getCurrentCustomer();
+            const loginButton = document.getElementById('login-button');
+            const profileButton = document.getElementById('profile-button');
+            const profileLabel = document.getElementById('profile-label');
+            const mobileLoginButton = document.getElementById('mobile-login-button');
+            const mobileProfileButton = document.getElementById('mobile-profile-button');
+
+            if (customer) {
+                if (loginButton) loginButton.classList.add('hidden');
+                if (mobileLoginButton) mobileLoginButton.classList.add('hidden');
+                if (profileButton) {
+                    profileButton.classList.remove('hidden');
+                    if (profileLabel) profileLabel.textContent = customer.name || 'Profile';
+                }
+                if (mobileProfileButton) mobileProfileButton.classList.remove('hidden');
+            } else {
+                if (loginButton) loginButton.classList.remove('hidden');
+                if (mobileLoginButton) mobileLoginButton.classList.remove('hidden');
+                if (profileButton) profileButton.classList.add('hidden');
+                if (mobileProfileButton) mobileProfileButton.classList.add('hidden');
+            }
+        }
+
+        function handleProfileLogout() {
+            logoutCustomer();
+            updateProfileButton();
+            closeProfileModal();
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+</html>
